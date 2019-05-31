@@ -1,0 +1,11 @@
+{
+    "name": "@qasir/example",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Qasir Development Team <dev@qasir.id>",
+    "license": "MIT",
+    "dependencies": {
+      "@qasir/components": "1.0.0"
+    }
+}
+  
