@@ -1,5 +1,4 @@
 import {urlencoded} from './helper'
-import Authenticate from '@qasir/auth'
 
 /**
  * Parent class curl for thirdparty request http to another api
@@ -7,19 +6,13 @@ import Authenticate from '@qasir/auth'
  * @class curl
  */
 class curl {
-	/**
-	 * Creates an instance of curl.
-	 * 
-	 * @memberOf curl
-	 */
 	constructor(config) {
 		this.config = config
 		this.baseUrl = config.baseUrl
 		this.apiUrl = this.baseUrl + config.apiEndpoint
 		this.method = 'get'
-
-		let auth = new Authenticate
-		this.headers = {...config.headers, ...auth.headerPublic(), ...auth.headerLogin()}
+		const csrf_token =document.querySelector('meta[name=csrf_token]').getAttribute( 'content' )
+		this.headers = {"Authorization": "Bearer " + csrf_token}
 		this.service = ''
 		this.data = {}
 	}
@@ -67,7 +60,7 @@ class curl {
 				headers: this.headers
 			})
 		} else {
-			return axios[this.method](fullUrl, {
+			return axios[this.method](fullUrl, this.data, {
 				headers: this.headers
 			})
 		}

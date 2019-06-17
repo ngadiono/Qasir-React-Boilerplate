@@ -1,7 +1,5 @@
 import {createAction, createReducer} from 'redux-act'
-// import Repository from './repository'
 import {push} from 'react-router-redux'
-// import {openNotificationSuccess, openNotificationError} from '@qasir/notification/reducers'
 
 export const setIsLoginValue = createAction("@@QASIR_MITRA_SET_IS_LOGIN_VALUE")
 export const setUserData = createAction("@@QASIR_MITRA_USER_DATA")

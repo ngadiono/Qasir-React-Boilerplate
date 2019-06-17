@@ -1,5 +1,5 @@
 import storage from '@qasir/storage-local'
-// import {Variables, Crypto} from '@qasir/security'
+import {Variables, Crypto} from '@qasir/security'
 class Authenticate {
     constructor() {
         this.storage = new storage
@@ -12,13 +12,13 @@ class Authenticate {
     }
 
     headerPublic() {
-        const chipperTextDeviceId = this.storage.getData(Variables.STORAGE_DEVICE_ID)
-        const chipperTextClientSecret= this.storage.getData(Variables.STORAGE_CLIENT_SECRET)
+        const chipperTextDeviceId = '123'
+        const chipperTextClientSecret= 'mitra'
 
         if (chipperTextClientSecret != null && chipperTextDeviceId != null) {
             return {
-                "client-secret": this.crypto.decrypt(chipperTextClientSecret),
-                "device-id": this.crypto.decrypt(chipperTextDeviceId)
+                "client-secret": chipperTextClientSecret,
+                "device-id": chipperTextDeviceId
             } 
         } else {
             return {}

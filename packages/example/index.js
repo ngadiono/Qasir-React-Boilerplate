@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Test extends React.Component {
+class Example extends React.Component {
     render() {
         return (
             <div>
@@ -9,5 +9,5 @@ class Test extends React.Component {
         )
     }
 }
-export default Test
+export default Example
 export reducer from './reducers'

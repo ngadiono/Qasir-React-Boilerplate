@@ -1,5 +1,5 @@
 import Loadable from 'react-loadable'
-import {} from '@qasir/test'
+import {} from '@qasir/example'
 
 const loadable = (loader) => {
    return Loadable({

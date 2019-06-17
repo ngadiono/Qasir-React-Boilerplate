@@ -5,7 +5,7 @@ import {ContainerQuery} from 'react-container-query'
 import classNames from 'classnames'
 // import Menu from '@qasir/crm-menu'
 // import TopBar from '@qasir/crm-topbar'
-import Content from '@qasir/mitra-content'
+import Content from '@qasir/app-content'
 
 // const AntContent = AntLayout.Content
 // const AntHeader = AntLayout.Header
