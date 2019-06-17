@@ -10,3 +10,4 @@ Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a su
 ```
 You have to be on Node >= 8.x and Yarn >= 1.5. 
 ```
+2. 

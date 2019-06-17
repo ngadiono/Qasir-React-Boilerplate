@@ -3,9 +3,5 @@
     "version": "1.0.0",
     "main": "index.js",
     "author": "Qasir Development Team <dev@qasir.id>",
-    "license": "MIT",
-    "dependencies": {
-        "@qasir/test": "1.0.0",
-        "@qasir/mitra-content": "1.0.0"
-    }
+    "license": "MIT"    
 }
