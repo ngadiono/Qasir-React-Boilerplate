@@ -10,4 +10,15 @@ Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a su
 ```
 You have to be on Node >= 8.x and Yarn >= 1.5. 
 ```
-2. 
+2. Run the installation script.
+
+```
+yarn install
+```
+3. Running the example website, from within the root directory run the local web server using.
+
+```
+yarn serve-dev
+yarn dev
+```
+4. Load the example site at [http://localhost:3000/#/example](http://localhost:3000/#/example) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
