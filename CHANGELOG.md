@@ -7,3 +7,4 @@
     - Adding views folder for handle website pages
     - Update webpack configuration
     - Update ignore files    
+    - Update package position
