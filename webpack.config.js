@@ -24,8 +24,8 @@ let plugins  = [];
 
 plugins.push(new MiniCssExtractPlugin({
   // Options similar to the same options in webpackOptions.output
-  // both options are optional
-  filename: '[name].[contenthash].css',
+  // both options are optional  
+  filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash].css' : 'main.css',
 }))
 
 let configurationWebpack = {
@@ -44,14 +44,14 @@ let configurationWebpack = {
   entry: ['./packages/web/index.jsx'],
   output: {
       path: __dirname,
-      filename: PublicPath + 'bundle.js'
+      filename: PublicPath + 'main.js'
   },
   resolve: {
       extensions: ['.js', '.json', '.jsx', '.css'],
       alias: {
           moment$: 'moment/moment.js',
       },
-  },
+  },  
   module: {
       rules: [
         {

@@ -17,7 +17,7 @@ config.plugins.push(
     }),
     new HtmlWebpackPlugin({
         title: 'Qasir Mitra Application',
-        template: './packages/server/template.html',
+        template: './packages/server/index.html',
         minify: true,
         cache: true
     })
