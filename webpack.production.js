@@ -5,14 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 config.output = {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, './public')
+    path: path.resolve(__dirname, './build')
 }
 
 config.plugins.push( 
-    new CleanWebpackPlugin(['./public/*.js', './public/*.css'],{
+    new CleanWebpackPlugin(['./build/*.js', './build/*.css'],{
         exclude: [
-            './public/.gitignore',
-            './public/fonts/*',
+            './build/.gitignore',
+            './build/fonts/*',
         ],
     }),
     new HtmlWebpackPlugin({

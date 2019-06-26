@@ -25,7 +25,7 @@ let plugins  = [];
 plugins.push(new MiniCssExtractPlugin({
   // Options similar to the same options in webpackOptions.output
   // both options are optional
-  filename: PublicPath + "bundle.css",
+  filename: '[name].[contenthash].css',
 }))
 
 let configurationWebpack = {
