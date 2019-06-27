@@ -40,9 +40,9 @@ let configurationWebpack = {
         new OptimizeCSSAssetsPlugin({})
       ]
   },
-  plugins: [
+  plugins: [    
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()    
   ],
   entry: ['./packages/web/index.jsx'],
   output: {

@@ -12,3 +12,4 @@
     - Adding ESLint code linting (Airbnb linter)
     - Update routing system
     - Adding PWA config support (workbox)
+    - Adding manifest file
