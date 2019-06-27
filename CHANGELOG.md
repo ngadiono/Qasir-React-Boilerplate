@@ -1,9 +1,9 @@
-# Mitra Qasir Wholesale Web View
+# Qasir React Boilerplate
 
 
 **Release Note:**
 
-- V1.0.1 (2019-06-10)
+- V1.0.1 (2019-06-27)
     - Adding views folder for handle website pages
     - Update webpack configuration
     - Update ignore files    

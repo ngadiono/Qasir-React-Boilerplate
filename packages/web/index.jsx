@@ -13,14 +13,16 @@ render(
     </Provider>, 
 document.getElementById("application"))
 
-if (process.env.PWA) {
-    if ('serviceWorker' in navigator) {    
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
-                console.log('SW registered: ', registration);
-            }).catch(registrationError => {
-                console.log('SW registration failed: ', registrationError);
-            });
+// if (process.env.PWA === 'true' || process.env.PWA === undefined) {    
+    
+// }
+
+if ('serviceWorker' in navigator) {    
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
         });
-    }
+    });
 }
