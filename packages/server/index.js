@@ -70,6 +70,12 @@ app.post("/ajax/generateClientSecret", (req, res) => {
     return
 })
 
+if (process.env.PWA) {
+    app.get("/service-worker.js", (req, res) => {    
+        res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
+    });
+}
+
 app.get("*", (req, res) => {
     let htmlRaw = getHtml();
     let httpUri = "https://"

@@ -10,7 +10,7 @@ const loadable = (loader) => {
 }
 
 const routes = {
-    'example': {
+    '/example': {
         component: loadable(() => import('@qasir/views/example'))
     }
 }

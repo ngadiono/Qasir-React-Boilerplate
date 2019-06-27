@@ -20,6 +20,7 @@
     "dev": "cross-env APP_ENV=local NODE_ENV=development webpack --watch --config ./webpack.dev.js",
     "build-local": "cross-env APP_ENV=local NODE_ENV=production webpack --config ./webpack.config.dev.js",
     "build-dev": "cross-env APP_ENV=staging NODE_ENV=production webpack --config ./webpack.prod.js",
+    "build-sw": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.sw.js",
     "build": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.js"
   },
   "devDependencies": {

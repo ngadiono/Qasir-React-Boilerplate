@@ -1,12 +1,12 @@
 {
-    "name": "@qasir/routes",
+    "name": "@qasir/service-worker",
     "version": "1.0.0",
+    "description": "",
     "main": "index.js",
     "author": "Qasir Development Team <dev@qasir.id>",
     "license": "MIT",
     "dependencies": {
-      "@qasir/store": "1.0.0",
-      "@qasir/components": "1.0.0"
+      "workbox-webpack-plugin": "^4.3.1"        
     }
 }
   

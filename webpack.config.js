@@ -136,6 +136,7 @@ plugins.push(new webpack.DefinePlugin({
     'HOST_API_URL': "'"+process.env.API_HOST+"'",
     'API_KEY_MAPS':"'"+process.env.API_KEY_MAPS+"'",
     'WEB_API_KEY': "'"+process.env.WEB_API_KEY+"'",
+    'PWA': "'"+process.env.PWA+"'",
   }
 }))
 
