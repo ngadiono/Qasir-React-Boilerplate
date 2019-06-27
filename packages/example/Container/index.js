@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 
 import Header from '../Header';
 
@@ -8,11 +9,12 @@ class Container extends Component {
     render() {
         return (
             <div className="App">
+                <Helmet title="Example page" />
                 <Header />
-                <header className="App-header">
+                <div className="App-header">
                     <img src="https://www.qasir.id/images/revamp-new-img/Qasir-White.svg" className="App-logo" alt="logo" />
                     <p>
-                    Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.
+                    Qasir's Frontend (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.
                     </p>
                     <a
                     className="App-link"
@@ -22,7 +24,7 @@ class Container extends Component {
                     >
                     Learn More
                     </a>
-                </header>
+                </div>
             </div>
         )
     }

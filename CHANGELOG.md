@@ -8,3 +8,4 @@
     - Update webpack configuration
     - Update ignore files    
     - Update package position
+    - Adding hot module reloading
