@@ -9,3 +9,4 @@
     - Update ignore files    
     - Update package position
     - Adding hot module reloading
+    - Adding ESLint code linting (Airbnb linter)

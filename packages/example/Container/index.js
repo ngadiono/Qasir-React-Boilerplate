@@ -10,7 +10,7 @@ class Container extends Component {
         return (
             <div className="App">
                 <Helmet title="Example page" />
-                <Header />
+                {/* <Header /> */}
                 <div className="App-header">
                     <img src="https://www.qasir.id/images/revamp-new-img/Qasir-White.svg" className="App-logo" alt="logo" />
                     <p>

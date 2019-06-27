@@ -40,7 +40,10 @@ let configurationWebpack = {
         new OptimizeCSSAssetsPlugin({})
       ]
   },
-  plugins: [],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ],
   entry: ['./packages/web/index.jsx'],
   output: {
       path: __dirname,
@@ -55,16 +58,18 @@ let configurationWebpack = {
   module: {
       rules: [
         {
-          test: /\.[s]?[ac]ss$/,
-          use: [
-              MiniCssExtractPlugin.loader,
-              'css-loader',
-              'postcss-loader',
-              'sass-loader'
-          ]
-        },
+          enforce: "pre",
+          test: /\.jsx|js$/,
+          exclude: /node_modules/,
+          loader: "eslint-loader",
+          options: {
+            emitWarning: true,
+            failOnError: false,
+            failOnWarning: false
+          }
+        },                
         {
-          test: /\.jsx?$/,
+          test: /\.jsx|js?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
@@ -77,6 +82,15 @@ let configurationWebpack = {
                 '@babel/plugin-syntax-dynamic-import'
               ]
           }
+        },
+        {
+          test: /\.[s]?[ac]ss$/,
+          use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              'postcss-loader',
+              'sass-loader'
+          ]
         },
         {
           test: /\.(png|jpg|gif|svg|jpeg)$/,
