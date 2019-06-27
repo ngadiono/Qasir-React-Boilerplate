@@ -5,6 +5,15 @@
     "plugin:react/recommended"
   ],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
   "settings": {
     "react": {
       "createClass": "createReactClass",                        
