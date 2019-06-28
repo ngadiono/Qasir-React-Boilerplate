@@ -59,7 +59,7 @@ let configurationWebpack = {
       rules: [
         {
           enforce: "pre",
-          test: /\.jsx|js$/,
+          test: /\.(jsx|js)$/,
           exclude: /node_modules/,
           loader: "eslint-loader",
           options: {
@@ -69,7 +69,7 @@ let configurationWebpack = {
           }
         },                
         {
-          test: /\.jsx|js?$/,
+          test: /\.(jsx|js)?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
