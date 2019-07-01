@@ -1,22 +1,24 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
-.App {
+.app {
     text-align: center;
   }
   
-  .App-logo {        
+  .app-logo {        
     width: 300px;
     pointer-events: none;
     margin-bottom: 25px;
   }
 
-  .App-logo + p {
+  .app-logo + p {
     font-size: 15px;
+    max-width: 550px;
   }
   
-  .App-header {
+  .app-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -27,6 +29,8 @@ body {
     color: white;
   }
   
-  .App-link {
+  .app-link {
     color: #61dafb;
+    text-decoration: none;
+    font-size: 15px;
   }
