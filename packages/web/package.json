@@ -6,7 +6,6 @@
     "license": "MIT",
     "dependencies": {
         "@qasir/store": "1.0.0",
-        "@qasir/components": "1.0.0",
-        "@qasir/app-content": "1.0.0"
+        "@qasir/components": "1.0.0"        
     }
 }

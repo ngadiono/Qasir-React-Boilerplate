@@ -1,5 +1,6 @@
-import {createAction, createReducer} from 'redux-act'
-import {push} from 'react-router-redux'
+import {createAction, createReducer} from 'redux-act';
+import {push} from 'react-router-redux';
+import Repository from './repository';
 
 export const setIsLoginValue = createAction("@@QASIR_MITRA_SET_IS_LOGIN_VALUE")
 export const setUserData = createAction("@@QASIR_MITRA_USER_DATA")

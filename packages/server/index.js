@@ -14,7 +14,18 @@ const path = require('path');
 
 app.set('views', __dirname);
 
-const PublicPath = "./public";
+let PublicPath = '';
+
+switch (process.env.NODE_ENV) {
+    case 'development':
+        PublicPath = "./public";
+        break; 
+    case 'production':
+        PublicPath = "./build";
+        break; 
+    default: 
+        PublicPath = "./public";
+}
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: false}))
@@ -58,6 +69,12 @@ app.post("/ajax/generateClientSecret", (req, res) => {
     })
     return
 })
+
+if (!isDev) {
+    app.get("/service-worker.js", (req, res) => {    
+        res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
+    });
+}
 
 app.get("*", (req, res) => {
     let htmlRaw = getHtml();

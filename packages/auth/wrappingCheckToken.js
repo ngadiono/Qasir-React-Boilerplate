@@ -23,7 +23,7 @@ return {
             dispatch(getIncentive())
         },
         'getNotification': () => {
-            dispatch(getNotification())
+            dispatch(getNotification());
         }
     }
 }
@@ -33,7 +33,7 @@ function wrappingCheckToken(InputComponent)  {
 
         componentWillMount(){
             const {checkTokenLogin, checkPrivilege, getIncentive, getNotification} = this.props
-            checkTokenLogin()
+            checkTokenLogin();
 
             const hrefLocation = window.location.href
             const arr = hrefLocation.match(/\/#\/(.*)/g) 

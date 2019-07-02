@@ -1,0 +1,8 @@
+{
+    "name": "@qasir/helper",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Qasir Development Team <dev@qasir.id>",
+    "license": "MIT"    
+}
+  
