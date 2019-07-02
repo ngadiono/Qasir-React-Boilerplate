@@ -11,7 +11,7 @@ class Container extends Component {
                 <div className="app-header">
                     <img src="https://www.qasir.id/images/revamp-new-img/Qasir-White.svg" className="app-logo" alt="logo" />
                     <p>
-                    Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.
+                    Qasir's Frontend (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.
                     </p>
                     <a
                     className="app-link"
