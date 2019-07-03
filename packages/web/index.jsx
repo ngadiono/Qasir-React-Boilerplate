@@ -5,6 +5,13 @@ import {ConnectedRouter} from 'react-router-redux'
 import {history, store} from '@qasir/store'
 import Application from './component/application.jsx'
 
+import 'antd/dist/antd.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import '../components/resources/AntStyles/AntDesign/antd.cleanui.scss'
+import '../components/resources/CleanStyles/Core/core.cleanui.scss'
+import '../components/resources/CleanStyles/Vendors/vendors.cleanui.scss'
+
 render(
     <Provider store={store}>
         <ConnectedRouter history={history}>            
@@ -12,10 +19,6 @@ render(
         </ConnectedRouter>
     </Provider>, 
 document.getElementById("application"))
-
-// if (process.env.PWA === 'true' || process.env.PWA === undefined) {    
-    
-// }
 
 if ('serviceWorker' in navigator) {    
     window.addEventListener('load', () => {
