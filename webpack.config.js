@@ -100,7 +100,7 @@ let configurationWebpack = {
               options: {
                   name: '[hash:12].[ext]',
                   publicPath: 'images/',
-                  outputPath: PublicPathImage + 'images/'
+                  outputPath: 'images/'
                 }
             },
             {
