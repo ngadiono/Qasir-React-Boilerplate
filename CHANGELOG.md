@@ -3,6 +3,10 @@
 
 **Release Note:**
 
+- V1.0.2 (2019-07-04)    
+    - Adding babel polyfill global
+    - Update .env format
+
 - V1.0.2 (2019-07-03)
     - Fixing path image render webpack
     - Adding ant design css
