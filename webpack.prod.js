@@ -8,7 +8,14 @@ config.output = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './build')
 }
+let outputFilename = 'index.html';
+if (process.env.APP_ENV == 'production') {
+    outputFilename = 'output.html';
+}
 
+if (process.env.APP_ENV == 'staging') {
+    outputFilename = 'stage-output.html'
+}
 config.plugins.push( 
     new CleanWebpackPlugin(['./build/*.js', './build/*.css'],{
         exclude: [
@@ -20,7 +27,8 @@ config.plugins.push(
         title: 'Qasir Mitra Application',
         template: './packages/server/index.html',
         minify: true,
-        cache: true
+        cache: true,
+        filename: outputFilename
     }),
     new ManifestPlugin({
         fileName: 'manifest.json',
