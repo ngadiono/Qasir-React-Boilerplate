@@ -1,5 +1,7 @@
 # Qasir React Boilerplate
 
+**Coming Soon:**
+- Adding hot module reloading
 
 **Release Note:**
 
@@ -19,9 +21,9 @@
     - Adding views folder for handle website pages
     - Update webpack configuration
     - Update ignore files    
-    - Update package position
-    - Adding hot module reloading
+    - Update package position    
     - Adding ESLint code linting (Airbnb linter)
     - Update routing system
     - Adding PWA config support (workbox)
     - Adding manifest file
+    
