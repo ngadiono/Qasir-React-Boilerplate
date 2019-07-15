@@ -3,6 +3,9 @@
 
 **Release Note:**
 
+- V1.0.4 (2019-07-15)    
+    - Update server script
+
 - V1.0.3 (2019-07-04)    
     - Adding babel polyfill global
     - Update .env format
