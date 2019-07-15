@@ -3,9 +3,10 @@
 
 **Release Note:**
 
-- V1.0.2 (2019-07-04)    
+- V1.0.3 (2019-07-04)    
     - Adding babel polyfill global
     - Update .env format
+    - Adding merchant ID in meta html
 
 - V1.0.2 (2019-07-03)
     - Fixing path image render webpack
