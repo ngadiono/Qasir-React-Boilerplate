@@ -1,16 +1,17 @@
-import React from 'react'
-import {Switch, Route, Router} from 'react-router-dom'
-import Loadable from 'react-loadable'
-import componentGateway from '@qasir/component-gateway'
-import ListRoute from './list'
+import React from 'react';
+import { Switch, Route, Router } from 'react-router-dom';
+import Loadable from 'react-loadable';
+
+import componentGateway from '@qasir/component-gateway';
+import ListRoute from './list';
 
 const loadable = loader => Loadable({
     loader,
     delay: false,
     loading: () => null
-})
+});
 
-const loadableRoutes = ListRoute
+const loadableRoutes = ListRoute;
 class Routes extends React.Component {
     render() {
         return (
@@ -35,5 +36,5 @@ class Routes extends React.Component {
         )
     }
 }
-export {loadableRoutes}
-export default Routes
+export { loadableRoutes };
+export default Routes;

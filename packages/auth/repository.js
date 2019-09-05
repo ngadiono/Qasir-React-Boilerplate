@@ -1,10 +1,10 @@
-import ClientSecret from './clientSecret'
-import storage from '@qasir/storage-local'
-import {Variables, Crypto} from '@qasir/security'
-import Service from './service'
-import {from} from 'rxjs'
-import {map, filter} from 'rxjs/operators'
-import auth from './index'
+import ClientSecret from './clientSecret';
+import storage from '@qasir/storage-local';
+import { Variables, Crypto } from '@qasir/security';
+import Service from './service';
+import { from } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
+import auth from './index';
 
 class Repository {
     constructor() {
@@ -238,4 +238,4 @@ class Repository {
     }
 }
 
-export default Repository
+export default Repository;

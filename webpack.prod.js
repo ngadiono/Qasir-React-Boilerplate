@@ -63,4 +63,4 @@ config.optimization = Object.assign(config.optimization, {
     }
 })
 
-module.exports = config
+module.exports = config;

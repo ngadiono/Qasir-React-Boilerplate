@@ -1,7 +1,8 @@
-import Curl from '@qasir/curl'
-import {ajax} from '@qasir/config'
+import Curl from '@qasir/curl';
+import {ajax} from '@qasir/config';
 
-export const VARIABLE_CLIENT_SECRET = "cltns_ctrks"
+export const VARIABLE_CLIENT_SECRET = "cltns_ctrks";
+
 class ClientSecret extends Curl {
     constructor() {
         let config = {
@@ -25,4 +26,4 @@ class ClientSecret extends Curl {
     }
 }
 
-export default ClientSecret
+export default ClientSecret;

@@ -1,5 +1,6 @@
-import storage from '@qasir/storage-local'
-import {Variables, Crypto} from '@qasir/security'
+import storage from '@qasir/storage-local';
+import {Variables, Crypto} from '@qasir/security';
+
 class Authenticate {
     constructor() {
         this.storage = new storage
@@ -46,6 +47,6 @@ class Authenticate {
     }
 }
 
-export default Authenticate
-export reducer from './reducers'
-export wrappingCheckToken from './wrappingCheckToken'
+export default Authenticate;
+export reducer from './reducers';
+export wrappingCheckToken from './wrappingCheckToken';

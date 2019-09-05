@@ -1,11 +1,11 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 import {
     checkTokenLogin, 
     checkPrivilege,
     getIncentive,
     getNotification
-} from './reducers'
+} from './reducers';
 
 const mapStateToProps = ({}) => {
     return{}
@@ -59,7 +59,8 @@ function wrappingCheckToken(InputComponent)  {
             )
         }
     }
-    return connect(mapStateToProps, mapDispatchToProps)(CheckLogin)
+    
+    return connect(mapStateToProps, mapDispatchToProps)(CheckLogin);
 }
 
-export default wrappingCheckToken
+export default wrappingCheckToken;

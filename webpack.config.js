@@ -1,20 +1,21 @@
-const path = require('path')
-let pathEnv = process.cwd() + '/.env'
+const path = require('path');
+let pathEnv = process.cwd() + '/.env';
+
 if (process.env.APP_ENV == "staging") {
   pathEnv = process.cwd() + '/config/staging/env' 
 } else if (process.env.APP_ENV == "production") {
   pathEnv = process.cwd() + '/config/production/env'
 }
 
-require('dotenv').config({path: pathEnv})
+require('dotenv').config({path: pathEnv});
 let webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const PublicPath = "./public/";
-let PublicPathImage= "./public/"
+const PublicPath = './public/';
+let PublicPathImage= './public/';
 
 if (process.env.NODE_ENV ===  "production") {
   PublicPathImage = "./";
@@ -138,7 +139,7 @@ plugins.push(new webpack.DefinePlugin({
     'WEB_API_KEY': "'"+process.env.WEB_API_KEY+"'",
     'PWA': "'"+process.env.PWA+"'",
   }
-}))
+}));
 
-configurationWebpack.plugins = plugins
-module.exports = configurationWebpack
+configurationWebpack.plugins = plugins;
+module.exports = configurationWebpack;

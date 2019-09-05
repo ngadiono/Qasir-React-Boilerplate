@@ -1,22 +1,9 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {push} from 'react-router-redux'
-import Auth from '@qasir/auth'
-import {dumpDataUser} from '@qasir/auth/reducers'
+import React from 'react';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
-const mapStateToProps = ({routing, security}) => {
-    return {
-        currentURL: routing.location != null ? routing.location.pathname : "/",
-        clientSecretKey: 'mitra',
-        currentPathName: routing.location != null ? routing.location.pathname : "/"
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {    
-    return {
-        dispatch: dispatch
-    }
-}
+import Auth from '@qasir/auth';
+import { dumpDataUser } from '@qasir/auth/reducers';
 
 class ComponentGateway extends React.Component {
     componentDidMount() {
@@ -48,8 +35,22 @@ class ComponentGateway extends React.Component {
     }
 }
 
+const mapStateToProps = ({routing, security}) => {
+    return {
+        currentURL: routing.location != null ? routing.location.pathname : "/",
+        clientSecretKey: 'mitra',
+        currentPathName: routing.location != null ? routing.location.pathname : "/"
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {    
+    return {
+        dispatch: dispatch
+    }
+}
+
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(ComponentGateway)
-export WrappingComponent from './wrappingComponent'
+)(ComponentGateway);
+export WrappingComponent from './wrappingComponent';
