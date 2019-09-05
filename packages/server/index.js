@@ -8,6 +8,7 @@ const express = require('express');
 let app = express();
 const expressNunjucks = require('express-nunjucks');
 const fs = require('fs');
+const util = require('util');
 
 const isDev = app.get('env') == 'development';
 const path = require('path');
@@ -73,4 +74,12 @@ app.get("*", (req, res) => {
     res.send(htmlRaw);
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!')); 
+// Checking public folder
+fs.access(PublicPath, fs.F_OK, (err) => {
+    if (err) {
+      console.log('Attention! Please run "npm run dev or yarn dev"')
+      return
+    }        
+});
+
+app.listen(3000, () => console.log('Welcome app listening on port 3000!')); 

@@ -8,6 +8,7 @@
     - Update package json root file
     - Update readme file
     - Change routing welcome page    
+    - Adding styling not found page
 
 - V1.0.3 (2019-07-04)    
     - Update server script

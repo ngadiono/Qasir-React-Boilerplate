@@ -59,10 +59,10 @@ let configurationWebpack = {
   module: {
       rules: [
         {
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.(jsx|js)$/,
           exclude: /node_modules/,
-          loader: "eslint-loader",
+          loader: 'eslint-loader',
           options: {
             emitWarning: true,
             failOnError: false,
@@ -127,7 +127,7 @@ let configurationWebpack = {
           ]
         }
       ],
-  }
+  }  
 }
 
 plugins.push(new webpack.DefinePlugin({
