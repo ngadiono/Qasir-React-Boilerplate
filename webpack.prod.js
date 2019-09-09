@@ -48,6 +48,7 @@ config.plugins.push(
           lang: 'en-US'
         }
     })
+)    
 
 config.optimization = Object.assign(config.optimization, {
     runtimeChunk: 'single',
