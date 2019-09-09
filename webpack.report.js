@@ -2,14 +2,15 @@ let config = require('./webpack.config.js');
 var path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackMonitor = require('webpack-monitor');
 
 config.output = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './build')
 }
-
+let outputFilename = 'index.html';
 config.plugins.push( 
     new CleanWebpackPlugin(['./build/*.js', './build/*.css'],{
         exclude: [
@@ -21,12 +22,8 @@ config.plugins.push(
         title: 'Qasir Mitra Application',
         template: './packages/server/index.html',
         minify: true,
-        cache: true
-    }),
-    new WorkboxWebpackPlugin.InjectManifest({        
-        swSrc: './packages/service-worker/index.js',
-        swDest: path.resolve(__dirname, './build', 'service-worker.js'),
-        globDirectory: 'build'           
+        cache: true,
+        filename: outputFilename
     }),
     new ManifestPlugin({
         fileName: 'manifest.json',
@@ -45,6 +42,15 @@ config.plugins.push(
           dir: 'ltr',
           lang: 'en-US'
         }
+    }),
+    new BundleAnalyzerPlugin({        
+        analyzerPort: 8006
+    }),
+    new WebpackMonitor({
+        capture: true,
+        target: './monitor/stats.json',
+        launch: true,
+        port: 8007
     })
 )
 
@@ -59,6 +65,6 @@ config.optimization = Object.assign(config.optimization, {
          }
        }
     }
-});
+})
 
 module.exports = config;

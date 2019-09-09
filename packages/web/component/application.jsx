@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Routes from "@qasir/routes"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Routes from '@qasir/routes';
 
 let contentBuffer = {
     pathName: null,
@@ -27,4 +27,4 @@ class Application extends React.Component {
     }
 }
 
-export default Application
+export default Application;

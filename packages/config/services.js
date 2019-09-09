@@ -16,4 +16,4 @@ switch (process.env.APP_ENV) {
         break;
 }
 
-export {servicesConfig}
+export { servicesConfig };

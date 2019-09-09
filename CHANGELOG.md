@@ -5,7 +5,15 @@
 
 **Release Note:**    
 
-- V1.0.3 (2019-07-15)    
+- V1.0.4 (2019-09-05)    
+    - Update server script not support redis server
+    - Update package json root file
+    - Update readme file
+    - Change routing welcome page    
+    - Adding styling not found page
+    - Adding webpack analyzer
+
+- V1.0.3 (2019-07-04)    
     - Update server script
     - Adding babel polyfill global
     - Update .env format

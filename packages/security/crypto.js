@@ -6,13 +6,13 @@ class Crypto {
     }
 
     encrypt(text) {
-        return CryptoJS.AES.encrypt(text, this.secretKey)
+        return CryptoJS.AES.encrypt(text, this.secretKey);
     }   
 
     decrypt(chiperText) {
         const bytes = CryptoJS.AES.decrypt(chiperText, this.secretKey)
-        return bytes.toString(CryptoJS.enc.Utf8)
+        return bytes.toString(CryptoJS.enc.Utf8);
     }
 }
 
-export default Crypto
+export default Crypto;

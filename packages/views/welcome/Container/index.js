@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 import Header from '../Header';
 
 import './style.scss';
+import logoQasir from '../../../assets/img/logo/logo-qasir-white.svg';
 
 class Container extends Component {    
     render() {
         return (
             <div className="app">                
                 <div className="app-header">
-                    <img src="https://www.qasir.id/images/revamp-new-img/Qasir-White.svg" className="app-logo" alt="logo" />
+                    <img src={logoQasir} className="app-logo" alt="logo" />
                     <p>
                     Qasir's Frontend (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.
                     </p>

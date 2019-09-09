@@ -18,7 +18,7 @@ yarn install
 3. Running the example website, from within the root directory run the local web server using.
 
 ```
-yarn serve-dev
 yarn dev
+yarn serve:dev
 ```
-4. Load the example site at [http://localhost:3000/#/example](http://localhost:3000/#/example) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+4. Load the example site at [http://localhost:3000/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.

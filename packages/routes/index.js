@@ -1,16 +1,19 @@
-import React from 'react'
-import {Switch, Route, Router} from 'react-router-dom'
-import Loadable from 'react-loadable'
-import componentGateway from '@qasir/component-gateway'
-import ListRoute from './list'
+import React from 'react';
+import { Switch, Route, Router } from 'react-router-dom';
+import Loadable from 'react-loadable';
+
+import componentGateway from '@qasir/component-gateway';
+import ListRoute from './list';
+
+import imgNotFound from '../assets/img/not-found.svg';
 
 const loadable = loader => Loadable({
     loader,
     delay: false,
     loading: () => null
-})
+});
 
-const loadableRoutes = ListRoute
+const loadableRoutes = ListRoute;
 class Routes extends React.Component {
     render() {
         return (
@@ -28,12 +31,21 @@ class Routes extends React.Component {
                     })}
                     <Route
                         render={() => (
-                            <h1>Gak ada Brother</h1>
+                            <div style={{
+                                backgroundColor: '#282c34',
+                                minHeight: '100vh',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <img src={imgNotFound} alt="not found" style={{ width: '32%' }}/>
+                            </div>
                         )}
                     />
             </Switch>
         )
     }
 }
-export {loadableRoutes}
-export default Routes
+export { loadableRoutes };
+export default Routes;

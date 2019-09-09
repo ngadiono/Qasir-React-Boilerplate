@@ -1,4 +1,4 @@
-import {urlencoded} from './helper'
+import { urlencoded } from './helper';
 
 /**
  * Parent class curl for thirdparty request http to another api
@@ -7,14 +7,14 @@ import {urlencoded} from './helper'
  */
 class curl {
 	constructor(config) {
-		this.config = config
-		this.baseUrl = config.baseUrl
-		this.apiUrl = this.baseUrl + config.apiEndpoint
-		this.method = 'get'
-		const csrf_token =document.querySelector('meta[name=csrf_token]').getAttribute( 'content' )
-		this.headers = {"Authorization": "Bearer " + csrf_token}
-		this.service = ''
-		this.data = {}
+		this.config = config;
+		this.baseUrl = config.baseUrl;
+		this.apiUrl = this.baseUrl + config.apiEndpoint;
+		this.method = 'get';
+		const csrf_token =document.querySelector('meta[name=csrf_token]').getAttribute( 'content' );
+		this.headers = {"Authorization": "Bearer " + csrf_token};
+		this.service = '';
+		this.data = {};
 	}
 
 	/**
@@ -25,7 +25,7 @@ class curl {
 	 * @memberOf curl
 	 */
 	setHeader(key, value) {
-		this.headers[key] = value
+		this.headers[key] = value;
 	}
 
 	/**
@@ -35,7 +35,7 @@ class curl {
 	 * @memberOf curl
 	 */
 	setData(obj) {
-		this.data = obj
+		this.data = obj;
 	}
 
 	/**
@@ -46,11 +46,11 @@ class curl {
 	 * @memberOf curl
 	 */
 	send() {
-		const axios = require('axios')
-		let fullUrl = this.apiUrl + this.service
+		const axios = require('axios');
+		let fullUrl = this.apiUrl + this.service;
 		if (this.method == 'get') {
 			if (Object.keys(this.data).length > 0) {
-				fullUrl =  fullUrl + '?' + urlencoded(this.data)
+				fullUrl =  fullUrl + '?' + urlencoded(this.data);
 			}
 			return axios[this.method](fullUrl, {
 				headers: this.headers
@@ -67,4 +67,4 @@ class curl {
 	}
 }
 
-export default curl
+export default curl;

@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import Container from './Container';
 
-class Example extends React.Component {	
+class Welcome extends Component {	
 	render () {
 	    return (
 	        <div>
-	            <Helmet title="Example page" />
+	            <Helmet title="Welcome in to Qasir Boilerplate" />
 				<Container/>				
 	        </div>
 	    );
 	}
 }
 
-export default Example;
+export default Welcome;
 export reducer from './reducers';

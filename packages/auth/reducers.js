@@ -2,12 +2,12 @@ import {createAction, createReducer} from 'redux-act';
 import {push} from 'react-router-redux';
 import Repository from './repository';
 
-export const setIsLoginValue = createAction("@@QASIR_MITRA_SET_IS_LOGIN_VALUE")
-export const setUserData = createAction("@@QASIR_MITRA_USER_DATA")
-export const setLoginLoading = createAction("@@QASIR_MITRA_LOADING_LOGIN")
-export const setPrivileges = createAction('@@QASIR_MITRA_SET_PRIVILEGES')
-export const setIncentiveUser = createAction('@@QASIR_MITRA_SET_INCENTIVE_USER')
-export const setNotificationUser = createAction('@@QASIR_MITRA_SET_NOTIFICATION_USER')
+export const setIsLoginValue = createAction("@@QASIR_MITRA_SET_IS_LOGIN_VALUE");
+export const setUserData = createAction("@@QASIR_MITRA_USER_DATA");
+export const setLoginLoading = createAction("@@QASIR_MITRA_LOADING_LOGIN");
+export const setPrivileges = createAction('@@QASIR_MITRA_SET_PRIVILEGES');
+export const setIncentiveUser = createAction('@@QASIR_MITRA_SET_INCENTIVE_USER');
+export const setNotificationUser = createAction('@@QASIR_MITRA_SET_NOTIFICATION_USER');
 
 export const redirectForgot = () => (dispatch) => {
     dispatch(push("/pin/forgot"))
@@ -138,4 +138,4 @@ export default createReducer({
     }),
     [setPrivileges]: (state, privileges) => ({...state, privileges}),
     [setIncentiveUser]: (state, incentive) => ({...state, incentive})
-}, initialState)
+}, initialState);

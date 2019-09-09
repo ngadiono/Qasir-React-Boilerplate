@@ -1,5 +1,5 @@
-import Repository  from './repository'
-import {push} from 'react-router-redux'
+import Repository  from './repository';
+import { push } from 'react-router-redux';
 
 export default({dispatch}) => next => (action) => {
     const hrefLocation = window.location.href
