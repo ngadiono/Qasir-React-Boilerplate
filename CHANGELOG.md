@@ -9,6 +9,7 @@
     - Update readme file
     - Change routing welcome page    
     - Adding styling not found page
+    - Adding webpack analyzer
 
 - V1.0.3 (2019-07-04)    
     - Update server script
