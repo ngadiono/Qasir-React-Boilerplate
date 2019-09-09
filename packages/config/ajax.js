@@ -4,4 +4,4 @@ const ajaxConfig = {
     generateClientSecretUrl: "/ajax/generateClientSecret"
 }
 
-export {ajaxConfig}
+export { ajaxConfig };

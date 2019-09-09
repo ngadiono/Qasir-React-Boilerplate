@@ -1,4 +1,4 @@
-import {ajax} from '@qasir/config'
+import { ajax } from '@qasir/config';
 
 class ResponseError {
 
@@ -12,4 +12,4 @@ class ResponseError {
     }
 }
 
-export default ResponseError
+export default ResponseError;

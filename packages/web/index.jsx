@@ -1,17 +1,18 @@
-import '@babel/polyfill'
-import React from 'react'
-import {render} from 'react-dom'
-import {Provider} from 'react-redux'
-import {ConnectedRouter} from 'react-router-redux'
-import {history, store} from '@qasir/store'
-import Application from './component/application.jsx'
+import '@babel/polyfill';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux'
+import { history, store } from '@qasir/store';
 
-import 'antd/dist/antd.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Application from './component/application.jsx';
 
-import '../components/resources/AntStyles/AntDesign/antd.cleanui.scss'
-import '../components/resources/CleanStyles/Core/core.cleanui.scss'
-import '../components/resources/CleanStyles/Vendors/vendors.cleanui.scss'
+import 'antd/dist/antd.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import '../components/resources/AntStyles/AntDesign/antd.cleanui.scss';
+import '../components/resources/CleanStyles/Core/core.cleanui.scss';
+import '../components/resources/CleanStyles/Vendors/vendors.cleanui.scss';
 
 render(
     <Provider store={store}>
@@ -19,7 +20,7 @@ render(
             <Application/>            
         </ConnectedRouter>
     </Provider>, 
-document.getElementById("application"))
+document.getElementById("application"));
 
 // if ('serviceWorker' in navigator) {    
 //     window.addEventListener('load', () => {

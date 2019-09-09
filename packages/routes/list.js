@@ -1,5 +1,5 @@
-import Loadable from 'react-loadable'
-import {} from '@qasir/views/example'
+import Loadable from 'react-loadable';
+import {} from '@qasir/views/welcome';
 
 const loadable = (loader) => {
    return Loadable({
@@ -10,9 +10,9 @@ const loadable = (loader) => {
 }
 
 const routes = {
-    '/example': {
-        component: loadable(() => import('@qasir/views/example'))
+    '/welcome': {
+        component: loadable(() => import('@qasir/views/welcome'))
     }
 }
 
-export default routes
+export default routes;

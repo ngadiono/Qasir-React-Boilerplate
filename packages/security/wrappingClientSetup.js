@@ -1,9 +1,9 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {generateClientSecret} from './reducers'
+import React from 'react';
+import { connect } from 'react-redux';
+import { generateClientSecret } from './reducers';
 
 const mapStateToProps = ({}) => {
-    return{}
+    return {};
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -18,8 +18,8 @@ function wrappingCheckToken(InputComponent)  {
     class ClienSetup extends React.Component {
 
         componentWillMount(){
-            const {generateClientSecret} = this.props
-            generateClientSecret()
+            const {generateClientSecret} = this.props;
+            generateClientSecret();
         }
 
         render() {
@@ -28,7 +28,7 @@ function wrappingCheckToken(InputComponent)  {
             )
         }
     }
-    return connect(mapStateToProps, mapDispatchToProps)(ClienSetup)
+    return connect(mapStateToProps, mapDispatchToProps)(ClienSetup);
 }
 
-export default wrappingCheckToken
+export default wrappingCheckToken;

@@ -1,5 +1,6 @@
-import React from 'react'
-import Page from './index'
+import React from 'react';
+
+import Page from './index';
 
 function wrappingComponent(InputComponent)  {
     return class extends React.Component {
@@ -12,4 +13,4 @@ function wrappingComponent(InputComponent)  {
         }
     }
 }
-export default wrappingComponent
+export default wrappingComponent;

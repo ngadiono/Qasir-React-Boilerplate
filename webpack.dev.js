@@ -7,6 +7,11 @@ config.output = {
     path: path.resolve(__dirname, './public')
 }
 
+config.devServer = {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true    
+}
+
 config.plugins.push(     
     new HtmlWebpackPlugin({
         title: 'Qasir Mitra Application',

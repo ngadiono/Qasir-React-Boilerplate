@@ -13,15 +13,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lerna:init": "lerna init",
     "lerna:bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
+    "lerna:clean": "lerna clean",
     "lint": "esw --ext .js --ext .jsx . --watch --color",
-    "serve:dev": "APP_ENV=local NODE_ENV=development nodemon ./packages/server/index.js",
-    "serve": "NODE_ENV=production node ./packages/server/index.js",
-    "dev": "cross-env APP_ENV=local NODE_ENV=development webpack --watch --config ./webpack.dev.js",
+    "dev": "cross-env APP_ENV=local NODE_ENV=development webpack --watch --config ./webpack.dev.js",    
+    "bundle:report": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.report.js",
     "build:local": "cross-env APP_ENV=local NODE_ENV=production webpack --config ./webpack.prod.local.js",
     "build:dev": "cross-env APP_ENV=staging NODE_ENV=production webpack --config ./webpack.prod.js",
     "build:sw": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.sw.js",
-    "build": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.js"
+    "build": "cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.js",
+    "serve:dev": "APP_ENV=local NODE_ENV=development nodemon ./packages/server/index.js",
+    "serve": "NODE_ENV=production node ./packages/server/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",
@@ -73,9 +74,12 @@
     "terser-webpack-plugin": "^1.1.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.19.1",
+    "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.8.0",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-monitor": "^1.0.14"
   },
   "dependencies": {
     "@qasir/qasir-components": "^1.0.0",
