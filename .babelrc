@@ -9,6 +9,13 @@
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
         "transform-object-assign",
-        "transform-decorators-legacy"
+        "transform-decorators-legacy",
+        [
+            "import",
+            [{
+              "libraryName": "antd",
+              "style": "css"
+            }]
+          ]
     ]
 }

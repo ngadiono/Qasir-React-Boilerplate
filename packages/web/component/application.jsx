@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { createGlobalStyle } from 'styled-components';
+
 import Routes from '@qasir/routes';
+import StyleReset from '@qasir/styles/reset';
+
+const GlobalStyle = createGlobalStyle`
+  ${StyleReset}`
 
 let contentBuffer = {
     pathName: null,
@@ -22,7 +28,10 @@ class Application extends React.Component {
 
     render() {
         return (
-            <Routes />
+            <div>
+                <GlobalStyle />    
+                <Routes />
+            </div>                            
         )
     }
 }
