@@ -10,15 +10,16 @@ Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a su
 ```
 You have to be on Node >= 8.x and Yarn >= 1.5. 
 ```
-2. Run the installation script.
+2. Download code from [Qasir React Boilerplate (Click for download)](https://github.com/QasirID/Qasir-React-Boilerplate/archive/1.0.5.zip) and change name directory root.
+3. Run the installation script.
 
 ```
-yarn install
+npm run install or yarn install
 ```
-3. Running the example website, from within the root directory run the local web server using.
+4. Running the example website, from within the root directory run the local web server using.
 
 ```
-yarn dev
-yarn serve:dev
+npm run dev or yarn dev
+npm run serve:dev or yarn serve:dev
 ```
-4. Load the example site at [http://localhost:3000/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+5. Load the example site at [http://localhost:3000/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
