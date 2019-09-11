@@ -5,7 +5,11 @@
 
 **Release Note:**    
 
-- V1.0.5 (2019-09-05)
+- V1.0.6 (2019-09-11)
+    - Remove styled reset library
+    - Clear redundant HTML tree from jsx wrapping
+    
+- V1.0.5 (2019-09-10)
     - Update Babel plugins
     - Remove css resources antd, bootstrap & clean styles
     - Adding reset style css
