@@ -5,6 +5,10 @@
 ### Refactor
 * Update editorconfig
 * Update gitignore & changelog files    
+* Remove unused library dependencies for reduce bundle size vendors
+
+### Features
+* Adding polyfill for support IE browser
     
 ## V1.0.6 (2019-09-11)
 
