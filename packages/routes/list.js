@@ -24,8 +24,8 @@ const routes = {
     '/login': {
       component: loadable(() => import('@qasir/views/login'))
     },
-    '/dashboard1': {
-      component: loadable(() => import('@qasir/views/dashboard1'))
+    '/dashboard': {
+      component: loadable(() => import('@qasir/views/dashboard'))
     },
     '/user-management': {
       component: loadable(() => import('@qasir/views/userManagement'))
