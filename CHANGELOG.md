@@ -1,6 +1,6 @@
 # Release Note:    
 
-## V1.0.7 (2019-09-12)
+## V1.0.7 (2019-09-16)
 
 ### Refactor
 * Update editorconfig
@@ -12,6 +12,8 @@
 ### Features
 * Adding polyfill for support IE browser
 * Adding code splitting
+* Adding partial layout views
+* Adding package file in assets app
     
 ## V1.0.6 (2019-09-11)
 

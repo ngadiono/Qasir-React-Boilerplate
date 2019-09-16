@@ -9,7 +9,7 @@ import Layout from '@qasir/views/containers';
 import Login from '@qasir/views/pages/login';
 import Page404 from '@qasir/views/pages/page404';
 import Page500 from '@qasir/views/pages/page500';
-import Welcome from '@qasir/views/welcome';
+import Welcome from '@qasir/views/pages/welcome';
 
 import imgNotFound from '../assets/img/not-found.svg';
 

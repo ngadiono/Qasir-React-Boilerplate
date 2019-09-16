@@ -1,7 +1,7 @@
 import Loadable from 'react-loadable';
 
-import {} from '@qasir/views/dashboard';
-import {} from '@qasir/views/user-management';
+import {} from '@qasir/views/contents/dashboard';
+import {} from '@qasir/views/contents/user-management';
 
 const loadable = (loader) => {
    return Loadable({
@@ -13,10 +13,10 @@ const loadable = (loader) => {
 
 const routes = {
     '/dashboard': {
-      component: loadable(() => import('@qasir/views/dashboard'))
+      component: loadable(() => import('@qasir/views/contents/dashboard'))
     },
     '/user-management': {
-      component: loadable(() => import('@qasir/views/user-management'))
+      component: loadable(() => import('@qasir/views/contents/user-management'))
     }
 }
 
