@@ -8,9 +8,9 @@ class ComponentGatewayPublic extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {this.props.children}
-            </div>
+            </React.Fragment>
         )
     }
 }
@@ -29,6 +29,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-    mapStateToProps, 
+    mapStateToProps,
     mapDispatchToProps
 )(ComponentGatewayPublic)

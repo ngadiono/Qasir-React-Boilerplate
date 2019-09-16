@@ -1,5 +1,5 @@
 {
-    "name": "@qasir/views/errors/500",
+    "name": "@qasir/views/pages/page500",
     "version": "1.0.0",
     "main": "index.js",
     "author": "Qasir Development Team <dev@qasir.id>",
