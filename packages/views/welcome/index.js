@@ -14,4 +14,4 @@ class Welcome extends Component {
 }
 
 export default Welcome;
-export reducer from './reducers';
+export reducer from './reducer';

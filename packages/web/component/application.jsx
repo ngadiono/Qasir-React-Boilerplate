@@ -28,10 +28,10 @@ class Application extends React.Component {
 
     render() {
         return (
-            <>
-                <GlobalStyle />    
+            <React.Fragment>
+                <GlobalStyle />
                 <Routes />
-            </>                            
+            </React.Fragment>
         )
     }
 }

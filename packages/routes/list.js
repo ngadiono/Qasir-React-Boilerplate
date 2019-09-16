@@ -28,7 +28,7 @@ const routes = {
       component: loadable(() => import('@qasir/views/dashboard'))
     },
     '/user-management': {
-      component: loadable(() => import('@qasir/views/userManagement'))
+      component: loadable(() => import('@qasir/views/user-management'))
     },
     '/welcome': {
       component: loadable(() => import('@qasir/views/welcome'))

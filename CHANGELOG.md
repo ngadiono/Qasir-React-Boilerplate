@@ -5,10 +5,13 @@
 ### Refactor
 * Update editorconfig
 * Update gitignore & changelog files    
+* Update readme file
 * Remove unused library dependencies for reduce bundle size vendors
+* Rename file reducer each folder views
 
 ### Features
 * Adding polyfill for support IE browser
+* Adding code splitting
     
 ## V1.0.6 (2019-09-11)
 
