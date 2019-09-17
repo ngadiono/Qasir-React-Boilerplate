@@ -5,7 +5,7 @@ class Header extends Component {
 
   render() {
     return (
-      <p>Header</p>
+      <div style={{ background: 'red', display: 'block', height: 70 }}>Header</div>
     );
   }
 

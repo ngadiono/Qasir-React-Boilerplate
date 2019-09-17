@@ -2,22 +2,29 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
-import Header from '@qasir/views/containers/header';
-import Aside from '@qasir/views/containers/aside';
-import Footer from '@qasir/views/containers/footer';
 import routes from '@qasir/routes/list';
+
+const Header = React.lazy(() => import('@qasir/views/containers/header'));
+const Aside = React.lazy(() => import('@qasir/views/containers/aside'));
+const Footer = React.lazy(() => import('@qasir/views/containers/footer'));
 
 const loadableRoutes = routes;
 
 class Layout extends Component {
 
+  loading = () => null;
+
   render() {
     return (
       <div id="app">
-        <Header />
+        <React.Suspense fallback={this.loading()}>
+          <Header />
+        </React.Suspense>
         <div id="app-body">
-          <Aside />
-          <main>
+          <React.Suspense fallback={this.loading()}>
+            <Aside />
+          </React.Suspense>
+          <main style={{ height: 400 }}>
           {Object
             .keys(loadableRoutes)
             .map(path => {
@@ -30,7 +37,9 @@ class Layout extends Component {
             })}
           </main>
         </div>
-        <Footer />
+        <React.Suspense fallback={this.loading()}>
+          <Footer />
+        </React.Suspense>
       </div>
     );
   }

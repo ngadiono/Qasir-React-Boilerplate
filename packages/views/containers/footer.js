@@ -5,7 +5,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <p>Footer</p>
+      <div style={{ background: 'blue', display: 'block', height: 70 }}>Footer</div>
     );
   }
 

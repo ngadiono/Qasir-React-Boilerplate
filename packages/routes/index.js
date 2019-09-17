@@ -1,28 +1,24 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Loadable from 'react-loadable';
 
 import componentGateway from '@qasir/component-gateway';
 import ListRoute from './list';
 
-import Layout from '@qasir/views/containers';
-import Login from '@qasir/views/pages/login';
-import Page404 from '@qasir/views/pages/page404';
-import Page500 from '@qasir/views/pages/page500';
-import Welcome from '@qasir/views/pages/welcome';
+const loading = () => <div>Loading...</div>;
 
-import imgNotFound from '../assets/img/not-found.svg';
+const Layout = React.lazy(() => import('@qasir/views/containers'));
+const Login = React.lazy(() => import('@qasir/views/pages/login'));
+const Page404 = React.lazy(() => import('@qasir/views/pages/Page404'));
+const Page500 = React.lazy(() => import('@qasir/views/pages/Page500'));
+const Welcome = React.lazy(() => import('@qasir/views/pages/welcome'));
 
-const loadable = loader => Loadable({
-    loader,
-    delay: false,
-    loading: () => null
-});
+import imgNotFound from '@qasir/assets/img/not-found.svg';
 
 const loadableRoutes = ListRoute;
 class Routes extends React.Component {
     render() {
         return (
+          <React.Suspense fallback={loading()}>
             <Switch>
               <Route exact path="/welcome" name="Welcome Page" render={props => <Welcome {...props}/>} />
               <Route exact key="/" path="/" component={componentGateway} />
@@ -54,6 +50,7 @@ class Routes extends React.Component {
                         )}
                     />
             </Switch>
+          </React.Suspense>
         )
     }
 }

@@ -2,7 +2,7 @@ const path = require('path');
 let pathEnv = process.cwd() + '/.env';
 
 if (process.env.APP_ENV == "staging") {
-  pathEnv = process.cwd() + '/config/staging/env' 
+  pathEnv = process.cwd() + '/config/staging/env'
 } else if (process.env.APP_ENV == "production") {
   pathEnv = process.cwd() + '/config/production/env'
 }
@@ -14,19 +14,13 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const PublicPath = './public/';
-let PublicPathImage= './public/';
-
-if (process.env.NODE_ENV ===  "production") {
-  PublicPathImage = "./";
-}
+const CSSPath = 'assets/css/';
+const ImgPath = 'assets/img/';
 
 let plugins  = [];
 
 plugins.push(new MiniCssExtractPlugin({
-  // Options similar to the same options in webpackOptions.output
-  // both options are optional  
-  filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash].css' : 'main.css',
+  filename: process.env.NODE_ENV === 'production' ? CSSPath+'[name].[contenthash].css' : CSSPath+'main.css',
 }))
 
 let configurationWebpack = {
@@ -36,26 +30,25 @@ let configurationWebpack = {
         new TerserPlugin({
             cache: true,
             parallel: true,
-            sourceMap: true // set to true if you want JS source maps
+            sourceMap: true
         }),
         new OptimizeCSSAssetsPlugin({})
       ]
   },
-  plugins: [    
+  plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()    
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   entry: ['./packages/web/index.jsx'],
   output: {
-      path: __dirname,
-      filename: PublicPath + 'main.js'
+      path: __dirname
   },
   resolve: {
       extensions: ['.js', '.json', '.jsx', '.css'],
       alias: {
           moment$: 'moment/moment.js',
       },
-  },  
+  },
   module: {
       rules: [
         {
@@ -68,16 +61,16 @@ let configurationWebpack = {
             failOnError: false,
             failOnWarning: false
           }
-        },                
+        },
         {
           test: /\.(jsx|js)?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
               plugins: [
-                '@babel/plugin-transform-react-jsx', 
+                '@babel/plugin-transform-react-jsx',
                 '@babel/plugin-transform-runtime',
-                '@babel/plugin-proposal-export-default-from', 
+                '@babel/plugin-proposal-export-default-from',
                 '@babel/plugin-proposal-class-properties',
                 '@babel/plugin-proposal-object-rest-spread',
                 '@babel/plugin-syntax-dynamic-import'
@@ -89,7 +82,7 @@ let configurationWebpack = {
           use: [
               MiniCssExtractPlugin.loader,
               'css-loader',
-              'postcss-loader',              
+              'postcss-loader',
               'sass-loader'
           ]
         },
@@ -100,8 +93,8 @@ let configurationWebpack = {
               loader: 'file-loader',
               options: {
                   name: '[hash:12].[ext]',
-                  publicPath: 'images/',
-                  outputPath: 'images/'
+                  publicPath: ImgPath,
+                  outputPath: ImgPath
                 }
             },
             {
@@ -127,7 +120,7 @@ let configurationWebpack = {
           ]
         }
       ],
-  }  
+  }
 }
 
 plugins.push(new webpack.DefinePlugin({
