@@ -25,7 +25,8 @@ class Layout extends Component {
             <Aside />
           </React.Suspense>
           <main style={{ height: 400 }}>
-          {Object
+          <React.Suspense fallback={this.loading()}>
+            {Object
             .keys(loadableRoutes)
             .map(path => {
                 const {
@@ -35,6 +36,7 @@ class Layout extends Component {
                 props.exact = exact === void 0 || exact || true
                 return <Route key={path} path={path} {...props}/>
             })}
+          </React.Suspense>
           </main>
         </div>
         <React.Suspense fallback={this.loading()}>
