@@ -1,6 +1,6 @@
 # Release Note:    
 
-## V1.0.7 (2019-09-16)
+## V1.0.7 (2019-09-17)
 
 ### Refactor
 * Update editorconfig
