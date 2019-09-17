@@ -2,6 +2,38 @@
 
 Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle. Everything you need should be just one command away.
 
+|👇|Includes|
+|:-:|:---|
+|⚙| Babel 7|
+|📦| Webpack 4|
+|⚛| React 16|
+|&#9885;| Redux 3|
+|🤖| Express Server|
+|🔥| Hot Module Replacement|
+|✂️| Code Splitting|
+|🛎| Server Side Rendering|
+
+## Pre requirements
+* [Node.js](https://nodejs.org/)
+
+## Libraries docs
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/introduction)
+* [Webpack](https://webpack.js.org/)
+* [Babel](https://babeljs.io)
+* [Express](http://expressjs.com/)
+
+## Getting started
+
+### Download
+[Click here for download](https://github.com/QasirID/Qasir-React-Boilerplate/archive/master.zip)
+
+### Clone
+```bash
+$ git clone https://github.com/mirchenko/react-code-splitting.git <YOUR_FOLDER_NAME>
+$ cd <YOUR_FOLDER_NAME>
+
+```
 
 ### Installation
 

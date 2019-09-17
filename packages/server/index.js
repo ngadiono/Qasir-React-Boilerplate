@@ -79,7 +79,7 @@ fs.access(PublicPath, fs.F_OK, (err) => {
     if (err) {
       console.log('Attention! Please run "npm run dev or yarn dev"')
       return
-    }        
+    }
 });
 
-app.listen(3000, () => console.log('Welcome app listening on port 3000!')); 
+app.listen(3001, () => console.log('App listening on port 3001!'));

@@ -6,12 +6,14 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackMonitor = require('webpack-monitor');
 
+const JSPath = 'assets/js/';
+
 config.output = {
-    filename: '[name].[contenthash].js',
+    filename: JSPath+'[name].[contenthash].js',
     path: path.resolve(__dirname, './build')
 }
 let outputFilename = 'index.html';
-config.plugins.push( 
+config.plugins.push(
     new CleanWebpackPlugin(['./build/*.js', './build/*.css'],{
         exclude: [
             './build/.gitignore',
@@ -43,7 +45,7 @@ config.plugins.push(
           lang: 'en-US'
         }
     }),
-    new BundleAnalyzerPlugin({        
+    new BundleAnalyzerPlugin({
         analyzerPort: 8006
     }),
     new WebpackMonitor({

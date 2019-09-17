@@ -1,5 +1,5 @@
 {
-    "name": "@qasir/views/welcome",
+    "name": "@qasir/views/pages/welcome",
     "version": "1.0.0",
     "main": "index.js",
     "author": "Qasir Development Team <dev@qasir.id>",
@@ -8,4 +8,3 @@
       "@qasir/components": "1.0.0"
     }
 }
-  

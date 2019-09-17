@@ -1,4 +1,9 @@
-import '@babel/polyfill';
+import 'react-app-polyfill/ie9'; // For IE 9-11 support
+import 'react-app-polyfill/stable';
+// import 'react-app-polyfill/ie11'; // For IE 11 support
+
+import './polyfill';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -9,13 +14,17 @@ import Application from './component/application.jsx';
 
 render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>                   
-            <Application/>            
+        <ConnectedRouter history={history}>
+            <Application/>
         </ConnectedRouter>
-    </Provider>, 
+    </Provider>,
 document.getElementById('application'));
 
-// if ('serviceWorker' in navigator) {    
+// If you want your app to work offline and load faster, you can change
+// uncomment code below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+
+// if ('serviceWorker' in navigator) {
 //     window.addEventListener('load', () => {
 //         navigator.serviceWorker.register('/service-worker.js').then(registration => {
 //             console.log('SW registered: ', registration);

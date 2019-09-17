@@ -1,17 +1,11 @@
-import Loadable from 'react-loadable';
-import {} from '@qasir/views/welcome';
-
-const loadable = (loader) => {
-   return Loadable({
-        loader,
-        delay: false,
-        loading: () => null
-    })
-}
+import React from 'react';
 
 const routes = {
-    '/welcome': {
-        component: loadable(() => import('@qasir/views/welcome'))
+    '/dashboard': {
+      component: React.lazy(() => import('@qasir/views/contents/dashboard'))
+    },
+    '/user-management': {
+      component: React.lazy(() => import('@qasir/views/contents/user-management'))
     }
 }
 

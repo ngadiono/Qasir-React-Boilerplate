@@ -3,16 +3,19 @@ var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-config.output = {    
+const JSPath = 'assets/js/'
+
+config.output = {
+    filename: JSPath + 'main.js',
     path: path.resolve(__dirname, './public')
 }
 
 config.devServer = {
     contentBase: path.join(__dirname, 'public'),
-    compress: true    
+    compress: true
 }
 
-config.plugins.push(     
+config.plugins.push(
     new HtmlWebpackPlugin({
         title: 'Qasir Mitra Application',
         template: './packages/server/index.html',

@@ -14,7 +14,7 @@ class ComponentGateway extends React.Component {
             dispatch(push("/login"))
         } else {
             const hrefLocation = window.location.href
-            const arr = hrefLocation.match(/\/#\/(.*)/g) 
+            const arr = hrefLocation.match(/\/#\/(.*)/g)
             const currentUrlPath = arr[0]
             dispatch(setShowMenuState(true))
             dispatch(dumpDataUser())
@@ -28,9 +28,9 @@ class ComponentGateway extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {this.props.children}
-            </div>
+            </React.Fragment>
         )
     }
 }
@@ -43,14 +43,14 @@ const mapStateToProps = ({routing, security}) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {    
+const mapDispatchToProps = (dispatch) => {
     return {
         dispatch: dispatch
     }
 }
 
 export default connect(
-    mapStateToProps, 
+    mapStateToProps,
     mapDispatchToProps
 )(ComponentGateway);
 export WrappingComponent from './wrappingComponent';
