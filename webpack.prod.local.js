@@ -4,12 +4,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
+const JSPath = 'assets/js/';
+
 config.output = {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, './public')
+  filename: JSPath+'[name].[contenthash].js',
+  path: path.resolve(__dirname, './public')
 }
 
-config.plugins.push( 
+config.plugins.push(
     new CleanWebpackPlugin(['./public/*.js', './public/*.css'],{
         exclude: [
             './public/.gitignore',
@@ -39,7 +41,7 @@ config.plugins.push(
           dir: 'ltr',
           lang: 'en-US'
         }
-    })    
+    })
 )
 
 config.optimization = Object.assign(config.optimization, {

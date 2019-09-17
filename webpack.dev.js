@@ -6,8 +6,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const JSPath = 'assets/js/'
 
 config.output = {
-    path: path.resolve(__dirname, './public'),
-    filename: JSPath + 'main.js'
+    filename: JSPath + 'main.js',
+    path: path.resolve(__dirname, './public')
 }
 
 config.devServer = {

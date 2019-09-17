@@ -5,12 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
+const JSPath = 'assets/js/';
+
 config.output = {
-    filename: '[name].[contenthash].js',
+    filename: JSPath+'[name].[contenthash].js',
     path: path.resolve(__dirname, './build')
 }
 
-config.plugins.push( 
+config.plugins.push(
     new CleanWebpackPlugin(['./build/*.js', './build/*.css'],{
         exclude: [
             './build/.gitignore',
@@ -23,10 +25,10 @@ config.plugins.push(
         minify: true,
         cache: true
     }),
-    new WorkboxWebpackPlugin.InjectManifest({        
+    new WorkboxWebpackPlugin.InjectManifest({
         swSrc: './packages/service-worker/index.js',
         swDest: path.resolve(__dirname, './build', 'service-worker.js'),
-        globDirectory: 'build'           
+        globDirectory: 'build'
     }),
     new ManifestPlugin({
         fileName: 'manifest.json',

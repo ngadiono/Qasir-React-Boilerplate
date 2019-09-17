@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-const JSPath = 'assets/js/'
+const JSPath = 'assets/js/';
 
 config.output = {
     filename: JSPath+'[name].[contenthash].js',
