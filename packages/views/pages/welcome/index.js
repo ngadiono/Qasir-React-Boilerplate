@@ -10,6 +10,7 @@ class Welcome extends Component {
 	render() {
 	    return (
         <Wrapper>
+          <Helmet title="Welcome to Qasir Boilerplate" />
           <img src={logoQasir} alt="logo" />
           <p>Qasir's Frontend (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle.</p>
           <a
