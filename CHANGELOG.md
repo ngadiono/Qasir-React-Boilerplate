@@ -1,5 +1,12 @@
 # Release Note:    
 
+## V1.0.7 (2019-09-18)
+
+### Refactor
+* Update tidy up syntax code
+* Update welcome page structure code
+
+
 ## V1.0.7 (2019-09-17)
 
 ### Refactor
@@ -14,12 +21,14 @@
 * Adding code splitting
 * Adding partial layout views
 * Adding package file in assets app
+
     
 ## V1.0.6 (2019-09-11)
 
 ### Refactor
 * Remove styled reset library
 * Clear redundant HTML tree from jsx wrapping
+
     
 ## V1.0.5 (2019-09-10)
 
@@ -30,6 +39,7 @@
 ### Features
 * Adding reset style css
 * Adding styled component library
+
 
 ## V1.0.4 (2019-09-05)    
 
@@ -43,6 +53,7 @@
 * Adding styling not found page
 * Adding webpack analyzer
 
+
 ## V1.0.3 (2019-07-04)    
 
 ### Refactor
@@ -53,6 +64,7 @@
 * Adding merchant ID in meta HTML
 * Adding babel polyfill global
 
+
 ## V1.0.2 (2019-07-03)
 
 ### Bug Fixes
@@ -60,6 +72,7 @@
 
 ### Features
 * Adding ant design css
+
 
 ## V1.0.1 (2019-07-02)
 

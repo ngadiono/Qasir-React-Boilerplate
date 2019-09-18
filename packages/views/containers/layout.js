@@ -16,15 +16,15 @@ class Layout extends Component {
 
   render() {
     return (
-      <div id="app">
+      <>
         <React.Suspense fallback={this.loading()}>
           <Header />
         </React.Suspense>
-        <div id="app-body">
+        <section id="app-body">
           <React.Suspense fallback={this.loading()}>
             <Aside />
           </React.Suspense>
-          <main style={{ height: 400 }}>
+          <main>
           <React.Suspense fallback={this.loading()}>
             {Object
             .keys(loadableRoutes)
@@ -38,11 +38,11 @@ class Layout extends Component {
             })}
           </React.Suspense>
           </main>
-        </div>
+        </section>
         <React.Suspense fallback={this.loading()}>
           <Footer />
         </React.Suspense>
-      </div>
+      </>
     );
   }
 

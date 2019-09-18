@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import componentGateway from '@qasir/component-gateway';
 import ListRoute from './list';
 
-const loading = () => <div>Loading...</div>;
+const loading = () => null;
 
 const Layout = React.lazy(() => import('@qasir/views/containers'));
 const Login = React.lazy(() => import('@qasir/views/pages/login'));

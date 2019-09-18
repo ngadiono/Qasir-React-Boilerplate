@@ -15,7 +15,7 @@ const path = require('path');
 
 app.set('views', __dirname);
 
-const PublicPath = "./build";
+const PublicPath = "./public";
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: false}))
