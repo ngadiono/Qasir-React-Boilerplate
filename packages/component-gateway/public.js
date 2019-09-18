@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class ComponentGatewayPublic extends React.Component {
     componentDidMount() {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
     }
 
     render() {
@@ -15,7 +15,7 @@ class ComponentGatewayPublic extends React.Component {
     }
 }
 
-const mapStateToProps = ({routing, security}, ownProps) => {
+const mapStateToProps = ({ routing, security }, ownProps) => {
     return {
         currentURL: routing.location != null ? routing.location.pathname : "/",
         clientSecretKey: security.clientSecret
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ComponentGatewayPublic)
+)(ComponentGatewayPublic);

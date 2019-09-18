@@ -1,26 +1,26 @@
 import storage from '@qasir/storage-local';
-import {Variables, Crypto} from '@qasir/security';
+import { Variables, Crypto } from '@qasir/security';
 
 class Authenticate {
     constructor() {
-        this.storage = new storage
-        this.crypto = new Crypto
+        this.storage = new storage;
+        this.crypto = new Crypto;
     }
 
     getDeviceId() {
         const chipperTextDeviceId = this.storage.getData(Variables.STORAGE_DEVICE_ID)
-        return this.crypto.decrypt(chipperTextDeviceId)
+        return this.crypto.decrypt(chipperTextDeviceId);
     }
 
     headerPublic() {
-        const chipperTextDeviceId = '123'
-        const chipperTextClientSecret= 'mitra'
+        const chipperTextDeviceId = '123';
+        const chipperTextClientSecret= 'mitra';
 
         if (chipperTextClientSecret != null && chipperTextDeviceId != null) {
             return {
-                "client-secret": chipperTextClientSecret,
-                "device-id": chipperTextDeviceId
-            } 
+                'client-secret': chipperTextClientSecret,
+                'device-id': chipperTextDeviceId
+            }
         } else {
             return {}
         }
@@ -28,9 +28,9 @@ class Authenticate {
 
     headerLogin() {
         const chipperTextTokenLogin = this.storage.getData(Variables.STORAGE_LOGIN_SECRET)
-        if (chipperTextTokenLogin != "" && chipperTextTokenLogin != null) {
+        if (chipperTextTokenLogin != '' && chipperTextTokenLogin != null) {
             return {
-                "Authorization": "Bearer " + this.crypto.decrypt(chipperTextTokenLogin)
+                'Authorization': 'Bearer ' + this.crypto.decrypt(chipperTextTokenLogin)
             }
         } else {
             return {}
@@ -39,7 +39,7 @@ class Authenticate {
 
     checkTokenLogin(){
         const chipperTextTokenLogin = this.storage.getData(Variables.STORAGE_LOGIN_SECRET)
-        if (chipperTextTokenLogin != "" && chipperTextTokenLogin != null) {
+        if (chipperTextTokenLogin != '' && chipperTextTokenLogin != null) {
             return true
         } else {
             return false

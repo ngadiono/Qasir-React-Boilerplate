@@ -7,7 +7,7 @@ class ResponseError {
         const statusToken =[8,9,10]
         if (statusToken.includes(status)){
             let baseUrl = ajax.baseUrl
-            location.replace(baseUrl + "/#/")
+            location.replace(baseUrl + '/#/')
         }
     }
 }

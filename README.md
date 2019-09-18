@@ -30,7 +30,7 @@ Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a su
 
 ### Clone
 ```bash
-$ git clone https://github.com/mirchenko/react-code-splitting.git <YOUR_FOLDER_NAME>
+$ git clone https://github.com/QasirID/Qasir-React-Boilerplate.git <YOUR_FOLDER_NAME>
 $ cd <YOUR_FOLDER_NAME>
 
 ```
@@ -54,4 +54,4 @@ npm run install or yarn install
 npm run dev or yarn dev
 npm run serve:dev or yarn serve:dev
 ```
-5. Load the example site at [http://localhost:3000/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+5. Load the example site at [http://localhost:3001/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3001 has already been taken, another port will be used. Look at the console messages to see which.

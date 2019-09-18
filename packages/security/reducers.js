@@ -5,7 +5,7 @@ import Crypto from '@qasir/security/crypto';
 import Variables from '@qasir/security/variables';
 import Repository  from '@qasir/auth/repository';
 
-export const setClientSecret = createAction("@@QASIR_CRM_SET_CLIENT_SECRET");
+export const setClientSecret = createAction('@@QASIR_APP_SET_CLIENT_SECRET');
 
 export const generateClientSecret = () => (dispatch) => {
   const crypto = new Crypto;

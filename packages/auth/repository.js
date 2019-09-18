@@ -8,37 +8,37 @@ import auth from './index';
 
 class Repository {
     constructor() {
-        this.auth = new auth
-        this.clientSecret = new ClientSecret
-        this.crypto = new Crypto
-        this.storage = new storage
-        this.service = new Service
+        this.auth = new auth;
+        this.clientSecret = new ClientSecret;
+        this.crypto = new Crypto;
+        this.storage = new storage;
+        this.service = new Service;
     }
 
     hasClientSecret() {
         const chipperText = this
             .storage
             .getData(Variables.STORAGE_CLIENT_SECRET)
-        if (chipperText == "" || chipperText == null) {
-            return false
+        if (chipperText == '' || chipperText == null) {
+            return false;
         } else {
             const clientSecret = this
                 .crypto
                 .decrypt(chipperText)
-            return clientSecret != ""
+            return clientSecret != '';
         }
     }
 
     resetStorage() {
         this
             .storage
-            .setData(Variables.STORAGE_LOGIN_SECRET, "")
+            .setData(Variables.STORAGE_LOGIN_SECRET, '')
         this
             .storage
-            .setData(Variables.STORAGE_CLIENT_SECRET, "")
+            .setData(Variables.STORAGE_CLIENT_SECRET, '')
         this
             .storage
-            .setData("user", "")
+            .setData('user', '')
     }
 
     setupLogoutData(callback) {
@@ -59,7 +59,7 @@ class Repository {
 
     checkTokenLogin(callback) {
         let token = this.storage.getData(Variables.STORAGE_LOGIN_SECRET)
-        if(token != "") {
+        if(token != '') {
             setTimeout(() => {
                 from(this.service.CheckToken())
                 .pipe(map(body => body.data))
@@ -72,18 +72,18 @@ class Repository {
                         callback(error.response.data.data)
                     }
                 })
-            }, 120);    
+            }, 120);
         }
     }
 
     setupUserLogin(userData) {
         this
             .storage
-            .setData("user", userData)
+            .setData('user', userData)
     }
 
     getDataUser() {
-        return JSON.parse(this.storage.getData("user"))
+        return JSON.parse(this.storage.getData('user'))
     }
 
     setupLoginToken(tokenLogin) {
@@ -141,7 +141,7 @@ class Repository {
         this
             .service
             .setHeader("client-secret", process.env.WEB_API_KEY)
-            
+
         from(this.service.ClientSecret(data))
             .pipe(map(body => body.data))
             .pipe(filter(item => item.status == 1))

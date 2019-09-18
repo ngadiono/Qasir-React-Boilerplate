@@ -3,8 +3,8 @@ import { push } from 'react-router-redux';
 
 export default({dispatch}) => next => (action) => {
     const hrefLocation = window.location.href
-    const arr = hrefLocation.match(/\/#\/(.*)/g) 
-    const currentUrlPath = arr[0].replace("/#", "")
+    const arr = hrefLocation.match(/\/#\/(.*)/g)
+    const currentUrlPath = arr[0].replace('/#', '/#')
     let urlNotToken = [
         '/pin/forgot',
         '/login',
@@ -21,7 +21,7 @@ export default({dispatch}) => next => (action) => {
             if(!flag.errors){
                 return next(action)
             }else{
-                dispatch(push("/login"))
+                dispatch(push('/login'))
             }
         })
     }

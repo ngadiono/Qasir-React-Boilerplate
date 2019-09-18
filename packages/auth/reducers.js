@@ -1,16 +1,16 @@
-import {createAction, createReducer} from 'redux-act';
-import {push} from 'react-router-redux';
+import { createAction, createReducer } from 'redux-act';
+import { push } from 'react-router-redux';
 import Repository from './repository';
 
-export const setIsLoginValue = createAction("@@QASIR_MITRA_SET_IS_LOGIN_VALUE");
-export const setUserData = createAction("@@QASIR_MITRA_USER_DATA");
-export const setLoginLoading = createAction("@@QASIR_MITRA_LOADING_LOGIN");
-export const setPrivileges = createAction('@@QASIR_MITRA_SET_PRIVILEGES');
-export const setIncentiveUser = createAction('@@QASIR_MITRA_SET_INCENTIVE_USER');
-export const setNotificationUser = createAction('@@QASIR_MITRA_SET_NOTIFICATION_USER');
+export const setIsLoginValue = createAction("@@QASIR_APP_SET_IS_LOGIN_VALUE");
+export const setUserData = createAction("@@QASIR_APP_USER_DATA");
+export const setLoginLoading = createAction("@@QASIR_APP_LOADING_LOGIN");
+export const setPrivileges = createAction('@@QASIR_APP_SET_PRIVILEGES');
+export const setIncentiveUser = createAction('@@QASIR_APP_SET_INCENTIVE_USER');
+export const setNotificationUser = createAction('@@QASIR_APP_SET_NOTIFICATION_USER');
 
 export const redirectForgot = () => (dispatch) => {
-    dispatch(push("/pin/forgot"))
+    dispatch(push('/pin/forgot'))
 }
 
 export const logout = () => (dispatch) => {
@@ -18,10 +18,10 @@ export const logout = () => (dispatch) => {
     repository.setupLogoutData((flag) => {
         if (flag) {
             dispatch(setLoginLoading(false))
-            dispatch(openNotificationSuccess("Berhasil Keluar"))
-            dispatch(push("/login"))
+            dispatch(openNotificationSuccess('Berhasil Keluar'))
+            dispatch(push('/login'))
         } else {
-            dispatch(openNotificationError("Gagal"))
+            dispatch(openNotificationError('Gagal'))
         }
     })
 }
@@ -36,15 +36,15 @@ export const storeLogin = (values) => (dispatch) => {
     }
     repository.storeLogin(params, (data) => {
         if (data.errors) {
-            dispatch(openNotificationError("Gagal", data.errors[0]))
+            dispatch(openNotificationError('Gagal', data.errors[0]))
             dispatch(setLoginLoading(false))
         } else {
             dispatch(setLoginLoading(false))
-            dispatch(openNotificationSuccess("Login Berhasil"))
+            dispatch(openNotificationSuccess('Login Berhasil'))
             repository.setupLoginToken(data.token.value)
             repository.setupUserLogin(JSON.stringify(data.data.user))
             dispatch(setUserData(data.data.user))
-            dispatch(push("/dashboard"))
+            dispatch(push('/dashboard'))
             dispatch(getPrivileges())
         }
     })
@@ -72,9 +72,9 @@ export const checkTokenLogin = () => (dispatch) => {
     let repository = new Repository
     repository.checkTokenLogin((data) => {
         if(data.errors){
-            dispatch(push("/login"))
+            dispatch(push('/login'))
         }else{
-            console.log("success")
+            console.log('success')
         }
     })
 }
@@ -83,8 +83,8 @@ export const checkPrivilege = (payload) => (dispatch) => {
     let repository = new Repository
     repository.checkPrivilege(payload, (data) => {
         if(data.errors){
-            dispatch(openNotificationError("Anda tidak bisa mengakses halaman ini"))
-            dispatch(push("/dashboard"))
+            dispatch(openNotificationError('Anda tidak bisa mengakses halaman ini'))
+            dispatch(push('/dashboard'))
         }
     })
 }
@@ -110,9 +110,9 @@ export const actionTypes = {
 }
 
 const initialState = {
-    isLogin: "",
-    user: "",
-    tokenLogin: "",
+    isLogin: '',
+    user: '',
+    tokenLogin: '',
     loadingLogin: false,
     privileges: [],
     incentive: null,
@@ -121,7 +121,7 @@ const initialState = {
 
 export default createReducer({
     [setNotificationUser]: (state, notification) => ({
-        ...state, 
+        ...state,
         notification
     }),
     [setIsLoginValue]: (state, isLogin) => ({
