@@ -5,6 +5,11 @@
 ### Refactor
 * Update tidy up syntax code
 * Update welcome page structure code
+* Update id root app in HTML
+
+### Features
+* Adding login page style
+* Adding Polished library for support mixin style in styled component
 
 
 ## V1.0.7 (2019-09-17)

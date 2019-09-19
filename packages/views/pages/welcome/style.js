@@ -15,12 +15,12 @@ const Wrapper = styled.section`
     width: 300px;
     pointer-events: none;
     margin-bottom: 25px;
-    + p {
+  }
+  p {
       font-size: 15px;
       max-width: 550px;
       color: #a9a9a9;
       margin-top: 10px;
-    }
   }
   a {
     color: #61dafb;

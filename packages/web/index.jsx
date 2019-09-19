@@ -18,7 +18,7 @@ render(
             <Application/>
         </ConnectedRouter>
     </Provider>,
-document.getElementById('application'));
+document.getElementById('app'));
 
 // If you want your app to work offline and load faster, you can change
 // uncomment code below. Note this comes with some pitfalls.
