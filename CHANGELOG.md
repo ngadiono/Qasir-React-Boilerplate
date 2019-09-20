@@ -1,15 +1,18 @@
 # Release Note:    
 
-## V1.0.7 (2019-09-18)
+## V1.0.8 (2019-09-18)
 
 ### Refactor
 * Update tidy up syntax code
 * Update welcome page structure code
 * Update id root app in HTML
+* Remove React lazy component
 
 ### Features
 * Adding login page style
+* Adding dashboard page style
 * Adding Polished library for support mixin style in styled component
+* Adding loadable component
 
 
 ## V1.0.7 (2019-09-17)

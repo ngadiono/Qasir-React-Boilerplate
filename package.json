@@ -86,6 +86,7 @@
     "webpack-monitor": "^1.0.14"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.2",
     "@qasir/qasir-components": "^1.0.0",
     "ajv": "^6.5.0",
     "antd": "^3.5.3",
