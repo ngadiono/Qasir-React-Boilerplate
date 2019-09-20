@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { WrapperFooter } from './style';
+
 class Footer extends Component {
 
   render() {
     return (
-      <div style={{ background: 'blue', display: 'block', height: 70 }}>Footer</div>
+      <WrapperFooter>
+        <span>2014 - 2019 © Qasir.</span>
+      </WrapperFooter>
     );
   }
 

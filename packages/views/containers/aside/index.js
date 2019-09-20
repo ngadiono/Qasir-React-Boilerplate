@@ -1,48 +1,62 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Menu from 'antd/es/menu';
+
+import { ListMenu, LinkMenu, Icons, LogoWrapper, LogoHref, LogoImg } from './style';
+
+import ImgDashboard from '@qasir/assets/img/icon/dashboard.png';
+import ImgLogo from '@qasir/assets/img/logo/logo-qasir-supplier.png';
+
+const { SubMenu } = Menu;
 
 class Aside extends Component {
 
-  constructor(props) {
-    super(props);
+  rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
-    this.eventToggle = this.eventToggle.bind(this);
-    this.state = {
-      activeTab: '1',
-    };
-  }
+  state = {
+    openKeys: ['sub1'],
+  };
 
-  eventToggle(tab) {
-    if (this.state.activeTab !== tab) {
+  onOpenChange = openKeys => {
+      const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+      if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      this.setState({ openKeys });
+      } else {
       this.setState({
-        activeTab: tab,
+          openKeys: latestOpenKey ? [latestOpenKey] : [],
       });
-    }
-  }
+      }
+  };
 
   render() {
     return (
-      <div style={{ background: 'green', display: 'block', height: 400, color: 'white', float: 'left', width: 200 }}>
-        <h4>aside</h4>
-        <ul>
-            <li>
-              <a href="#/dashboard">
-              dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#/user-management">
-              user
-              </a>
-            </li>
-            <li>
-              <a href="#/login">
-              login
-              </a>
-            </li>
-          </ul>
-      </div>
+      <ListMenu>
+      <LogoWrapper>
+          <LogoHref>
+              <LogoImg src={ImgLogo} />
+          </LogoHref>
+      </LogoWrapper>
+          <Menu
+              openKeys={this.state.openKeys}
+              onOpenChange={this.onOpenChange}
+              mode="inline"
+          >
+              <Menu.Item key="1">
+                  <a href="#/dashboard">
+                      <Icons src={ImgDashboard} />
+                      <span> Dashboard </span>
+                  </a>
+              </Menu.Item>
+              <Menu.Item key="2">
+                  <a href="#/user-management">
+                      <Icons src={ImgDashboard} />
+                      <span> User Management </span>
+                  </a>
+              </Menu.Item>
+          </Menu>
+      </ListMenu>
+
     );
   }
 

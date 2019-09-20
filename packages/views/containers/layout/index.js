@@ -20,7 +20,7 @@ class Layout extends Component {
         <React.Suspense fallback={this.loading()}>
           <Header />
         </React.Suspense>
-        <section id="app-body">
+        <section id="app-body" style={{ display: 'flex' }}>
           <React.Suspense fallback={this.loading()}>
             <Aside />
           </React.Suspense>
