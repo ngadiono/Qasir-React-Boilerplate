@@ -6,6 +6,7 @@
 * Update tidy up syntax code
 * Update welcome page structure code
 * Update id root app in HTML
+* Update eslint following airbnb style
 * Remove React lazy component
 
 ### Features

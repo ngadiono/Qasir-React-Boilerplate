@@ -3,7 +3,7 @@ import Fingerprint2 from 'fingerprintjs2';
 import Storage from '@qasir/storage-local';
 import Crypto from '@qasir/security/crypto';
 import Variables from '@qasir/security/variables';
-import Repository  from '@qasir/auth/repository';
+import Repository from '@qasir/auth/repository';
 
 export const setClientSecret = createAction('@@QASIR_APP_SET_CLIENT_SECRET');
 

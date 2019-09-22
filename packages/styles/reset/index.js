@@ -1,4 +1,4 @@
-import { styled, css, createGlobalStyle } from 'styled-components';
+import { css, createGlobalStyle } from 'styled-components';
 
 export const StyleReset = css`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -122,7 +122,7 @@ body {
     color: #e34225!important
   }
 }
-`
+`;
 
 export const Reset = createGlobalStyle`${StyleReset}`;
 

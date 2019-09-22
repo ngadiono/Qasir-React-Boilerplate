@@ -2,16 +2,17 @@
 
 Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle. Everything you need should be just one command away.
 
-|👇|Includes|
+|:metal:|Includes|
 |:-:|:---|
-|⚙| Babel 7|
+|:gear:| Babel 7|
 |📦| Webpack 4|
 |⚛| React 16|
-|&#9885;| Redux 3|
-|🤖| Express Server|
-|🔥| Hot Module Replacement|
-|✂️| Code Splitting|
-|🛎| Server Side Rendering|
+|:factory:| Redux 3|
+|:robot:| Express Server|
+|:sparkling_heart:| Airbnb Styling|
+|:fire:| Hot Module Replacement|
+|:scissors:| Code Splitting|
+|:hamburger:| Server Side Rendering|
 
 ## Pre requirements
 * [Node.js](https://nodejs.org/)

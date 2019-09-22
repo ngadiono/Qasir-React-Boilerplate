@@ -54,9 +54,11 @@ let configurationWebpack = {
         {
           enforce: 'pre',
           test: /\.(jsx|js)$/,
+          include: /packages/,
           exclude: /node_modules/,
           loader: 'eslint-loader',
           options: {
+            configFile: './.eslintrc',
             emitWarning: true,
             failOnError: false,
             failOnWarning: false
