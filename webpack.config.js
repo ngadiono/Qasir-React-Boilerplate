@@ -17,7 +17,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CSSPath = 'assets/css/';
 const ImgPath = 'assets/img/';
 
-let plugins  = [];
+let plugins = [];
 
 plugins.push(new MiniCssExtractPlugin({
   filename: process.env.NODE_ENV === 'production' ? CSSPath+'[name].[contenthash].css' : CSSPath+'main.css',
@@ -96,7 +96,7 @@ let configurationWebpack = {
               options: {
                   name: '[hash:12].[ext]',
                   publicPath: ImgPath,
-                  outputPath: ImgPath
+                  outputPath: ImgPath,
                 }
             },
             {
@@ -104,7 +104,7 @@ let configurationWebpack = {
               options: {
                 mozjpeg: {
                   progressive: true,
-                  quality: 65
+                  quality: 65,
                 },
                 // optipng.enabled: false will disable optipng
                 optipng: {
@@ -112,7 +112,7 @@ let configurationWebpack = {
                 },
                 pngquant: {
                   quality: '65-90',
-                  speed: 4
+                  speed: 4,
                 },
                 gifsicle: {
                   interlaced: false,

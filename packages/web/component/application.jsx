@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import Routes from '@qasir/routes';
 import StyleReset from '@qasir/styles/reset';
 
 const GlobalStyle = createGlobalStyle`
-  ${StyleReset}`
+  ${StyleReset}`;
 
-class Application extends React.Component {
+class Application extends Component {
     render() {
         return (
             <React.Fragment>
