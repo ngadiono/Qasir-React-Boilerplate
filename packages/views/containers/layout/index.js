@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+import loadable from '@loadable/component';
 
 import routes from '@qasir/routes/list';
 
-const Header = React.lazy(() => import('@qasir/views/containers/header'));
-const Aside = React.lazy(() => import('@qasir/views/containers/aside'));
-const Footer = React.lazy(() => import('@qasir/views/containers/footer'));
+const Header = loadable(() => import('@qasir/views/containers/header'));
+const Aside = loadable(() => import('@qasir/views/containers/aside'));
+const Footer = loadable(() => import('@qasir/views/containers/footer'));
 
 const loadableRoutes = routes;
 
 class Layout extends Component {
 
-  loading = () => null;
-
   render() {
     return (
       <>
-        <React.Suspense fallback={this.loading()}>
-          <Header />
-        </React.Suspense>
+        <Header />
         <section id="app-body" style={{ display: 'flex' }}>
-          <React.Suspense fallback={this.loading()}>
-            <Aside />
-          </React.Suspense>
+          <Aside />
           <main>
-          <React.Suspense fallback={this.loading()}>
             {Object
             .keys(loadableRoutes)
             .map(path => {
@@ -36,12 +30,9 @@ class Layout extends Component {
                 props.exact = exact === void 0 || exact || true
                 return <Route key={path} path={path} {...props}/>
             })}
-          </React.Suspense>
           </main>
         </section>
-        <React.Suspense fallback={this.loading()}>
-          <Footer />
-        </React.Suspense>
+        <Footer />
       </>
     );
   }

@@ -52,4 +52,5 @@ yarn.lock
 .npm
 
 # Optional eslint cache
+.eslintignore
 .eslintcache

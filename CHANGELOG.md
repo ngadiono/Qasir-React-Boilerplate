@@ -14,6 +14,7 @@
 * Adding dashboard page style
 * Adding Polished library for support mixin style in styled component
 * Adding loadable component
+* Adding support ES6 (import) in Node.js
 
 
 ## V1.0.7 (2019-09-17)

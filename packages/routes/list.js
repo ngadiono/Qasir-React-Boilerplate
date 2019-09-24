@@ -1,11 +1,16 @@
 import React from 'react';
+import loadable from '@loadable/component';
 
 const routes = {
     '/dashboard': {
-      component: React.lazy(() => import('@qasir/views/contents/dashboard'))
+      component: loadable(() => import('@qasir/views/contents/dashboard'), {
+        fallback: <p>Loading..</p>,
+      })
     },
     '/user-management': {
-      component: React.lazy(() => import('@qasir/views/contents/user-management'))
+      component: loadable(() => import('@qasir/views/contents/user-management'), {
+        fallback: <p>Loading..</p>,
+      })
     }
 }
 
