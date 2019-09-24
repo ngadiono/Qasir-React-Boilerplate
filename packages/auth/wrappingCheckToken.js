@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-    checkTokenLogin, 
+    checkTokenLogin,
     checkPrivilege,
     getIncentive,
     getNotification
@@ -18,7 +18,7 @@ return {
         },
         'checkPrivilege': (value) => {
             dispatch(checkPrivilege(value))
-        }, 
+        },
         'getIncentive': () => {
             dispatch(getIncentive())
         },
@@ -32,22 +32,24 @@ function wrappingCheckToken(InputComponent)  {
     class CheckLogin extends React.Component {
 
         componentWillMount(){
-            const {checkTokenLogin, checkPrivilege, getIncentive, getNotification} = this.props
+            const { checkTokenLogin, checkPrivilege, getIncentive, getNotification } = this.props
             checkTokenLogin();
 
-            const hrefLocation = window.location.href
-            const arr = hrefLocation.match(/\/#\/(.*)/g) 
-            const currentUrlPath = arr[0].replace("/#/", "")
-            const splitUrl = currentUrlPath.split("/")
-            let code = ""
-            if(splitUrl[0] === "user" || splitUrl[0] === "group"){
-                code = "setting"
+            const hrefLocation = window.location.href;
+            const arr = hrefLocation.match(/\/#\/(.*)/g);
+            const currentUrlPath = arr[0].replace('/#/', '');
+            const splitUrl = currentUrlPath.split('/');
+            let code = '';
+
+            if(splitUrl[0] === 'user' || splitUrl[0] === 'group'){
+                code = 'setting'
             }else{
                 code = splitUrl[0]
             }
             let payload = {
                 code: code
             }
+
             checkPrivilege(payload)
             getIncentive()
             getNotification()
@@ -59,7 +61,7 @@ function wrappingCheckToken(InputComponent)  {
             )
         }
     }
-    
+
     return connect(mapStateToProps, mapDispatchToProps)(CheckLogin);
 }
 

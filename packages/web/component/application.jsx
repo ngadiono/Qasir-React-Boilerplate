@@ -1,31 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import Routes from '@qasir/routes';
 import StyleReset from '@qasir/styles/reset';
 
 const GlobalStyle = createGlobalStyle`
-  ${StyleReset}`
+  ${StyleReset}`;
 
-let contentBuffer = {
-    pathName: null,
-    content: null,
-}
-
-class Application extends React.Component {
-    static childContextTypes = {
-        getContentBuffer: PropTypes.func,
-        setContentBuffer: PropTypes.func,
-    }
-
-    getChildContext() {
-        return {
-            getContentBuffer: () => contentBuffer,
-            setContentBuffer: ({ pathName, content }) => (contentBuffer = { pathName, content }),
-        }
-    }
-
+class Application extends Component {
     render() {
         return (
             <React.Fragment>

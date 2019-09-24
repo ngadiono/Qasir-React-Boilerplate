@@ -21,9 +21,14 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;  
+  font-size: 100%;
   vertical-align: baseline;
 }
+/* main for dekstop */
+main{
+  margin-left: 240px !important;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
@@ -48,7 +53,76 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-`
+body {
+  background: #F2F4F7 !important;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif !important;
+}
+.ant-layout {
+  background: #F2F4F7;
+  font-family: 'Montserrat', sans-serif !important;
+  .ant-layout-content {
+    margin-left: 250px;
+    margin-top: 35px;
+  }
+}
+
+.table-striped {
+  .ant-table-content {
+    .ant-table-body {
+      table {
+        border-radius : 4px !important;
+        border-left   : 1px solid #EEF0F2;
+        border-right  : 1px solid #EEF0F2;
+        border-bottom : 1px solid #EEF0F2;
+        .ant-table-thead {
+          > tr {
+            > th {
+              font-family : Montserrat;
+              font-style  : normal;
+              font-weight : 600;
+              font-size   : 14px;
+              line-height : 17px;
+              background  : #F2F4F7 !important;
+              color       : #474955;
+              text-align  : center;
+            }
+          }
+        }
+        .ant-table-tbody {
+          >tr {
+            opacity: 0.3;
+            >td {
+              border: 0px !important;
+            }
+          }
+          > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+            background: #03A9F4;
+            opacity: 0.1;
+          }
+        }
+        tbody tr:nth-of-type(odd) {
+          background: #F2F4F7 !important;
+        }
+      }
+    }
+  }
+}
+
+.content-wrapper {
+  background: #fff;
+  border-top-left-radius: 50px;
+  padding: 40px;
+}
+
+.ant-pagination-item-active {
+  border-color :#e34225!important
+  a {
+    color: #e34225!important
+  }
+}
+`;
 
 export const Reset = createGlobalStyle`${StyleReset}`;
 

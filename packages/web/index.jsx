@@ -7,7 +7,7 @@ import './polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from 'react-router-redux';
 import { history, store } from '@qasir/store';
 
 import Application from './component/application.jsx';
@@ -18,7 +18,7 @@ render(
             <Application/>
         </ConnectedRouter>
     </Provider>,
-document.getElementById('application'));
+document.getElementById('app'));
 
 // If you want your app to work offline and load faster, you can change
 // uncomment code below. Note this comes with some pitfalls.

@@ -2,7 +2,7 @@ import { urlencoded } from './helper';
 
 /**
  * Parent class curl for thirdparty request http to another api
- * 
+ *
  * @class curl
  */
 class curl {
@@ -12,16 +12,16 @@ class curl {
 		this.apiUrl = this.baseUrl + config.apiEndpoint;
 		this.method = 'get';
 		const csrf_token =document.querySelector('meta[name=csrf_token]').getAttribute( 'content' );
-		this.headers = {"Authorization": "Bearer " + csrf_token};
+		this.headers = {'Authorization': 'Bearer ' + csrf_token};
 		this.service = '';
 		this.data = {};
 	}
 
 	/**
 	 * Setting custom header http request.
-	 * @param {string} key 
-	 * @param {string} value 
-	 * 
+	 * @param {string} key
+	 * @param {string} value
+	 *
 	 * @memberOf curl
 	 */
 	setHeader(key, value) {
@@ -30,8 +30,8 @@ class curl {
 
 	/**
 	 * Setting up data from object
-	 * 
-	 * @param {object} obj  
+	 *
+	 * @param {object} obj
 	 * @memberOf curl
 	 */
 	setData(obj) {
@@ -42,7 +42,7 @@ class curl {
 	 * Function to send http request.
 	 * @function send
 	 * @returns Promise
-	 * 
+	 *
 	 * @memberOf curl
 	 */
 	send() {
