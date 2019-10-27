@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { default as Form } from 'antd/es/form';
 import 'antd/es/form/style/index.css';
@@ -16,6 +17,7 @@ class FormLogin extends Component {
     const { form } = this.props;
     return (
       <>
+        <Helmet title="Member Area - Qasir Supplier" />
         <GlobalStyleLogin />
         <LoginCardImg src={imgBg} />
         <Form>

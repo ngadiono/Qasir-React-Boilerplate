@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 
 class Page500 extends Component {
   render() {
-    return (<p>Page500</p>)
+    return (
+      <>
+        <Helmet title="500 Internal Server Error - Qasir Supplier" />
+        <p>Internal Server Error</p>
+      </>
+    );
   }
 }
 

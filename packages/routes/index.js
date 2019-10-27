@@ -31,7 +31,7 @@ class Routes extends React.Component {
                     ...props
                   } = loadableRoutes[path]
                   props.exact = exact === void 0 || exact || true
-                  return <Route key={null} path={path} render={props => <Layout {...props}/>}/>
+                  return <Route exact key={null} path={path} render={props => <Layout {...props} headHTML={loadableRoutes[path].headHTML} />}/>
               })}
                 <Route
                   render={() => (
