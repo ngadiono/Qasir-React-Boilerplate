@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 
@@ -14,10 +15,12 @@ const loadableRoutes = routes;
 class Layout extends Component {
 
   render() {
+    const { headHTML } = this.props;
     return (
       <>
+        <Helmet title={headHTML.title} />
         <Header />
-        <section id="app-body" style={{ display: 'flex' }}>
+        <section id="app-body">
           <Aside />
           <main>
             {Object
@@ -28,7 +31,7 @@ class Layout extends Component {
                     ...props
                 } = loadableRoutes[path]
                 props.exact = exact === void 0 || exact || true
-                return <Route key={path} path={path} {...props}/>
+                return <Route key={path} path={path} {...props} />
             })}
           </main>
         </section>
