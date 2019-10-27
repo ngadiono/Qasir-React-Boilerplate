@@ -2,6 +2,10 @@
 
 ## V1.0.9 (2019-09-24)
 
+### Refactor
+* Update style 404 pages (on progress)
+* Update style 500 pages (on progress)
+
 ### Features
 * Adding dynamic meta head HTML
 * Adding HTTP status codes
