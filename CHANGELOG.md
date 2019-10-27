@@ -1,14 +1,17 @@
 # Release Note:    
 
-## V1.0.9 (2019-09-24)
+## V1.0.9 (2019-10-27)
 
 ### Refactor
-* Update style 404 pages (on progress)
-* Update style 500 pages (on progress)
+* Update style 404 pages 
+* Update style 500 pages
+* Update HTML template server express
+* Remove warning log in webpack config
 
 ### Features
 * Adding dynamic meta head HTML
 * Adding HTTP status codes
+* Adding Qasir components
 
 
 ## V1.0.8 (2019-09-24)

@@ -49,6 +49,7 @@ let configurationWebpack = {
           moment$: 'moment/moment.js',
       },
   },
+  stats: 'errors-only',
   module: {
       rules: [
         // {

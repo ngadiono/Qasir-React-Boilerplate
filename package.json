@@ -119,6 +119,7 @@
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
     "polished": "^3.4.1",
+    "qasir": "^0.0.3",
     "react": "^16.4.0",
     "react-app-polyfill": "^1.0.2",
     "react-dom": "^16.4.0",
