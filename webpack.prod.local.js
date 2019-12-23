@@ -3,8 +3,10 @@ var path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const JSPath = 'assets/js/';
+const localesPath = 'assets/locales';
 
 config.output = {
   filename: JSPath+'[name].[contenthash].js',
@@ -41,7 +43,13 @@ config.plugins.push(
           dir: 'ltr',
           lang: 'en-US'
         }
-    })
+    }),
+    new CopyPlugin([ 
+      {
+        from: './packages/assets/locales/',
+        to: 'assets/locales/'
+      }
+    ])
 )
 
 config.optimization = Object.assign(config.optimization, {

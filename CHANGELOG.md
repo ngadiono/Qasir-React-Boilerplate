@@ -1,5 +1,10 @@
 # Release Note:    
 
+## V1.0.10 (2019-12-23)
+
+### Features
+* Adding multi language/locales (i18n)
+
 ## V1.0.9 (2019-10-27)
 
 ### Refactor
