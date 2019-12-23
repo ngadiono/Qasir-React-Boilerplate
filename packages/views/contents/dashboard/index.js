@@ -9,37 +9,23 @@ const Dashboard = () => {
   // Use `useTranslation` hooks only in functional component,
   // for more flexible use (e.g. class and function component)
   // use `withTranslation` HOC.
-  const [lang, setLang] = useState('id');
-  const { t, i18n } = useTranslation();
-  // i18n.changeLanguage('id');
-
-  const setLangId = () => {
-    setLang('id');
-    i18n.changeLanguage('id');
-  }
-
-  const setLangEn = () => {
-    setLang('en-US');
-    i18n.changeLanguage('en-US');
-  }
+  const { t } = useTranslation();
 
   return (
-    <Row>
-      <Col md={24} lg={24}>
-        <Button type="link" onClick={() => setLangId()}>id-ID</Button>
-        <Button type="link" onClick={() => setLangEn()}>en-US</Button>
-        {t('welcome_to_qasir_dashboard')}
-      </Col>
-    </Row>
+    <Suspense fallback={<LoadingPlaceholder />}>
+      <Row>
+        <Col md={24} lg={24}>
+          {t('welcome_to_qasir_dashboard')}
+        </Col>
+      </Row>
+    </Suspense>
   );
 }
 
 class Index extends Component {
   render() {
     return (
-      <Suspense fallback={<LoadingPlaceholder />}>
-        <Dashboard />
-      </Suspense>
+      <Dashboard />
     );
   }
 }

@@ -12,6 +12,9 @@ background     : #fff;
 
 export const Account = styled.div`
     float   : right;
+    width: 512px;
+    display: flex;
+
     .ant-dropdown-trigger {
         display : flex;
         text-align: right;
@@ -56,6 +59,11 @@ export const Account = styled.div`
             line-height: 42px;
             margin-left: 12px;
         }
+    }
+
+    .ant-select {
+        margin-top: 32px;
+        margin-right: 32px;
     }
 `;
 
