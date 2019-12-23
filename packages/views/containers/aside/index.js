@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { withTranslation } from "react-i18next";
 import Menu from 'antd/es/menu';
 
 import { ListMenu, LinkMenu, Icons, LogoWrapper, LogoHref, LogoImg } from './style';
@@ -30,6 +31,7 @@ class Aside extends Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
       <ListMenu>
       <LogoWrapper>
@@ -51,7 +53,7 @@ class Aside extends Component {
               <Menu.Item key="2">
                   <a href="#/user-management">
                       <Icons src={ImgDashboard} />
-                      <span> User Management </span>
+                      <span> {t('user_management')} </span>
                   </a>
               </Menu.Item>
           </Menu>
@@ -65,4 +67,4 @@ class Aside extends Component {
 Aside.propTypes = {};
 Aside.defaultProps = {};
 
-export default Aside;
+export default withTranslation()(Aside);

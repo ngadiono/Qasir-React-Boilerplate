@@ -11,6 +11,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history, store } from '@qasir/store';
 
 import Application from './component/application.jsx';
+import './i18n';
 
 render(
     <Provider store={store}>
