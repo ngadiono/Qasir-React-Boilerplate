@@ -1,18 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, useState } from 'react';
 import { Row, Col } from 'antd/es/grid';
+import { useTranslation } from "react-i18next";
+import { Button, LoadingPlaceholder } from "@qasir/components";
 
 import "antd/es/grid/style/index.css";
 
-class Dashboard extends Component {
-  render() {
-    return (
+const Dashboard = () => {
+  // Use `useTranslation` hooks only in functional component,
+  // for more flexible use (e.g. class and function component)
+  // use `withTranslation` HOC.
+  const { t } = useTranslation();
+
+  return (
+    <Suspense fallback={<LoadingPlaceholder />}>
       <Row>
         <Col md={24} lg={24}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {t('welcome_to_qasir_dashboard')}
         </Col>
       </Row>
+    </Suspense>
+  );
+}
+
+class Index extends Component {
+  render() {
+    return (
+      <Dashboard />
     );
   }
 }
 
-export default Dashboard;
+export default Index;

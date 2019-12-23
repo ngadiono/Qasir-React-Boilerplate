@@ -7,6 +7,7 @@ import Dropdown from 'antd/es/dropdown';
 import Icon from 'antd/es/icon';
 import Drawer from 'antd/es/drawer';
 import { createGlobalStyle } from 'styled-components';
+import { withTranslation } from "react-i18next";
 
 import { Wrapper, ButtonHummber, Account } from './style';
 import Aside from '@qasir/views/containers/aside';
@@ -19,6 +20,7 @@ import 'antd/es/drawer/style/index.css';
 
 import UserImg from '@qasir/assets/img/profile.png';
 import HamberImg from '@qasir/assets/img/icon/menu.png';
+import { LangSwitcher } from '@qasir/components';
 
 const GlobalStyle = createGlobalStyle`
   .ant-dropdown {
@@ -79,7 +81,19 @@ class Header extends Component {
       });
   };
 
+  /**
+   * On change language event handler, will set the language of the whole app.
+   * 
+   * @param {String}  selectedLanguage current selected language.
+   */
+  handleChangeLanguage = (selectedLanguage) => {
+    const { i18n } = this.props;
+    i18n.changeLanguage(selectedLanguage);
+  }
+
   render() {
+    const { i18n } = this.props;
+    
     return(
       <>
         <Helmet title="Dashboard - Qasir Boilerplate" />
@@ -87,7 +101,6 @@ class Header extends Component {
         <GlobalStyle/>
             <Row>
                 <Col md={6} lg={6} xs={6}>
-
                     <ButtonHummber onClick={this.showDrawer}>
                         <img src={HamberImg} />
                     </ButtonHummber>
@@ -103,6 +116,7 @@ class Header extends Component {
                 </Col>
                 <Col md={18} lg={18} xs={18}>
                     <Account>
+                      <LangSwitcher defaultLanguage={i18n.options.defaults} onChangeLanguage={this.handleChangeLanguage} />
                         <Dropdown overlay={AccountMenu} trigger={['click']}>
                             <a href="#">
                                 <div>
@@ -128,4 +142,4 @@ class Header extends Component {
 Header.propTypes = {};
 Header.defaultProps = {};
 
-export default Header;
+export default withTranslation()(Header);
