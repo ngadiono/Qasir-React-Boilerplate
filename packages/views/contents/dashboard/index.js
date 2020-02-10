@@ -1,9 +1,6 @@
 import React, { Component, Suspense, useState } from 'react';
-import { Row, Col } from 'antd/es/grid';
+import { Col, Row } from "antd";
 import { useTranslation } from "react-i18next";
-import { Button, LoadingPlaceholder } from "@qasir/components";
-
-import "antd/es/grid/style/index.css";
 
 const Dashboard = () => {
   // Use `useTranslation` hooks only in functional component,
