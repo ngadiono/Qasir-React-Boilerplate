@@ -26,7 +26,8 @@
     "build:sw": "npm run build:clean && cross-env APP_ENV=production NODE_ENV=production webpack --progress --config ./webpack.prod.sw.js",
     "build": "npm run build:clean && cross-env APP_ENV=production NODE_ENV=production webpack --progress --config ./webpack.prod.js",
     "serve:dev": "NODE_ENV=development nodemon ./packages/server/index.js",
-    "serve": "NODE_ENV=production node ./packages/server/index.js"
+    "serve": "NODE_ENV=production node ./packages/server/index.js",
+    "mocking": "yarn json-server -p 3001 --watch ./packages/mocking/db.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -125,6 +126,7 @@
     "i18next-xhr-backend": "^3.2.2",
     "immutability-helper": "^2.7.0",
     "immutable": "^3.8.2",
+    "json-server": "^0.16.1",
     "lerna": "^3.18.4",
     "lodash": "^4.17.10",
     "mini-css-extract-plugin": "^0.4.0",

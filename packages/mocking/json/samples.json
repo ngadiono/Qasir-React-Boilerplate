@@ -1,0 +1,96 @@
+{
+  "code": 200,
+  "message": "Berhasil",
+  "data": {
+    "pagination": {
+      "page_size": 10,
+      "total_data": 128,
+      "current_page": 1,
+      "total_page": 13,
+      "next": 2,
+      "prev": null
+    },
+    "list": [
+      {
+        "id": 101885,
+        "pemilik": "yoyot ",
+        "agen": "testi agne",
+        "email": "yoyot@gm.com",
+        "mobile": "0283423488",
+        "place_address": "blambangan putra"
+      },
+      {
+        "id": 101851,
+        "pemilik": "joko santosa",
+        "agen": "agen 10807",
+        "email": "agen108@gmail.com",
+        "mobile": "081988888888",
+        "place_address": "yogyakarta blambangan"
+      },
+      {
+        "id": 101816,
+        "pemilik": "Agen Maryani",
+        "agen": "toko qelontong",
+        "email": "maryani@email.kk",
+        "mobile": "0895999999",
+        "place_address": "jl.test no 100"
+      },
+      {
+        "id": 101749,
+        "pemilik": "desiagen ",
+        "agen": "desiagens",
+        "email": "desiagen@email.co",
+        "mobile": "9898989898",
+        "place_address": "jl payakumbuh"
+      },
+      {
+        "id": 101748,
+        "pemilik": "desiagen ",
+        "agen": "agen desi",
+        "email": "desiagen@agen.com",
+        "mobile": "098989898",
+        "place_address": "jl mangkubumi"
+      },
+      {
+        "id": 101678,
+        "pemilik": "marsupilami kuning",
+        "agen": "Agen Garuda",
+        "email": "garuda@email.cc",
+        "mobile": "98796867567",
+        "place_address": "jl. garuda asik"
+      },
+      {
+        "id": 101423,
+        "pemilik": "marini ",
+        "agen": "WarunQ",
+        "email": "warung@email.gg",
+        "mobile": "07894584584",
+        "place_address": "jl. kepuh kidul"
+      },
+      {
+        "id": 101422,
+        "pemilik": "Ujang 5 ",
+        "agen": "Ujang 5",
+        "email": "",
+        "mobile": "6289988776655441",
+        "place_address": ""
+      },
+      {
+        "id": 101421,
+        "pemilik": "Ujang 4 ",
+        "agen": "Ujang 4",
+        "email": "",
+        "mobile": "6289988776655443",
+        "place_address": ""
+      },
+      {
+        "id": 101420,
+        "pemilik": "cintih ",
+        "agen": "cintih",
+        "email": "",
+        "mobile": "628957588885",
+        "place_address": ""
+      }
+    ]
+  }
+}

@@ -9,6 +9,10 @@ class storage {
 
 	getData(key) {
 		return this.mystorage.getItem(key);
+  }
+
+  removeDataMultiple(Arraykey) {
+    Arraykey.forEach(storage => this.mystorage.removeItem(storage));
 	}
 
 	removeData(key) {

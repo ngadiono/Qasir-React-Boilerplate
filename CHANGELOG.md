@@ -1,5 +1,13 @@
 # Release Note:    
 
+## V1.0.10 (xxxx-xx-xx)
+
+### Refactor
+* Adding multiple remove local storage
+
+### Features
+* Adding mocking data
+
 ## V1.0.10 (2019-12-23)
 
 ### Features
