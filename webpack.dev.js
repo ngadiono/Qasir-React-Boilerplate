@@ -5,7 +5,6 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const JSPath = 'assets/js/';
-const localesPath = 'assets/locales';
 
 config.output = {
   filename: JSPath + 'main.js',
@@ -19,7 +18,7 @@ config.devServer = {
 
 config.plugins.push(
   new HtmlWebpackPlugin({
-    title: 'Qasir Mitra Application',
+    title: 'Qasir Application',
     template: './packages/server/index.html',
     inject: true
   }),
@@ -27,7 +26,7 @@ config.plugins.push(
     fileName: 'manifest.json',
     basePath: process.env.NODE_ENV === 'production' ? '/build/' : '/public/',
     seed: {
-      name: 'App name',
+      name: 'Qasir Application',
       short_name: 'Short app name',
       icons: '',
       start_url: '',

@@ -1,13 +1,19 @@
 # Release Note:
 
-## V1.1.0 (xxxx-xx-xx)
+## V1.1.2 (xxxx-xx-xx)
 
 ### Refactor
 
 - Update document format code
+- Update babel config (adding dynamic import for lodash)
+- Update webpack config
 - Remove editor config
 
-## V1.0.10 (2020-02-27)
+### Features
+
+- Adding new algorithm compression build files (gzip, br)
+
+## V1.1.1 (2020-02-27)
 
 ### Refactor
 

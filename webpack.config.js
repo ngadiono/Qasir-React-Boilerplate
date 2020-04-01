@@ -1,17 +1,10 @@
 const path = require('path');
 let pathEnv = process.cwd() + '/.env';
 
-if (process.env.APP_ENV == 'staging') {
-  pathEnv = process.cwd() + '/config/staging/env';
-} else if (process.env.APP_ENV == 'production') {
-  pathEnv = process.cwd() + '/config/production/env';
-}
-
 require('dotenv').config({ path: pathEnv });
 let webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const CSSPath = 'assets/css/';
@@ -35,7 +28,10 @@ let configurationWebpack = {
       new TerserPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true
+        sourceMap: true,
+        terserOptions: {
+          ecma: 6
+        }
       }),
       new OptimizeCSSAssetsPlugin({})
     ]

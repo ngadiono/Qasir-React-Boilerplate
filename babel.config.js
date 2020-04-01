@@ -4,55 +4,55 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: 'current',
+          node: 'current'
           // browsers: 'defaults',
-        },
-      },
+        }
+      }
     ],
     [
-      "@babel/preset-react",
+      '@babel/preset-react',
       {
-        "pragma": "dom", // default pragma is React.createElement
-        "pragmaFrag": "DomFrag", // default is React.Fragment
-        "throwIfNamespace": false // defaults to true
+        pragma: 'dom', // default pragma is React.createElement
+        pragmaFrag: 'DomFrag', // default is React.Fragment
+        throwIfNamespace: false // defaults to true
       }
     ]
   ],
-  "plugins": [
+  plugins: [
     [
-      "@babel/plugin-proposal-class-properties",
+      '@babel/plugin-proposal-class-properties',
       {
-        "loose": true
+        loose: true
       }
     ],
     [
-      "import",
+      'import',
       {
-        "libraryName": "antd",
-        "libraryDirectory": "es",
-        "style": "css",
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: 'css'
       }
     ],
-    "@babel/plugin-proposal-export-default-from",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-transform-arrow-functions",
-    "@babel/plugin-transform-block-scoping",
-    "@babel/plugin-transform-react-jsx",
-    "@babel/plugin-transform-runtime",
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-transform-arrow-functions',
+    '@babel/plugin-transform-block-scoping',
+    '@babel/plugin-transform-react-jsx',
+    '@babel/plugin-transform-runtime'
   ],
 
-  "env": {
-    "test": {
-      "plugins": [
-        "dynamic-import-node",
+  env: {
+    test: {
+      plugins: [
+        'dynamic-import-node',
         [
-          "import",
+          'import',
           {
-            "libraryName": "antd",
-            "style": "css",
+            libraryName: 'antd',
+            style: 'css'
           }
-        ],
+        ]
       ]
     }
   }
