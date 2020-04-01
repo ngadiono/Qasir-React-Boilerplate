@@ -1,19 +1,18 @@
-import styled, {createGlobalStyle} from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { fontPrimary } from '@qasir/styles/font';
 
 export const LoginCardImg = styled.img`
-    width    : 28%;
-    right    : 0;
-    position : absolute;
-    top      : 40px;
+  width: 28%;
+  right: 0;
+  position: absolute;
+  top: 40px;
 `;
 export const LoginCardImgTitle = styled.img`
-    width         : 90%;
-    margin        : auto;
-    display       : block;
-    margin-bottom : 35px;
+  width: 90%;
+  margin: auto;
+  display: block;
+  margin-bottom: 35px;
 `;
-
 
 export const GlobalStyleLogin = createGlobalStyle`
     body{

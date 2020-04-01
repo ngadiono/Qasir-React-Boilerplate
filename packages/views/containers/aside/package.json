@@ -1,7 +1,7 @@
 {
-    "name": "@qasir/views/containers/aside",
-    "version": "1.0.0",
-    "main": "index.js",
-    "author": "Qasir Development Team <dev@qasir.id>",
-    "license": "MIT"
+  "name": "@qasir/views/containers/aside",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Qasir Development Team <dev@qasir.id>",
+  "license": "MIT"
 }

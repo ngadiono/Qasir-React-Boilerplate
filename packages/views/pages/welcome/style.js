@@ -17,10 +17,10 @@ const Wrapper = styled.section`
     margin-bottom: 25px;
   }
   p {
-      font-size: 15px;
-      max-width: 550px;
-      color: #a9a9a9;
-      margin-top: 10px;
+    font-size: 15px;
+    max-width: 550px;
+    color: #a9a9a9;
+    margin-top: 10px;
   }
   a {
     color: #61dafb;

@@ -13,7 +13,6 @@ const Footer = loadable(() => import('@qasir/views/containers/footer'));
 const loadableRoutes = routes;
 
 class Layout extends Component {
-
   render() {
     const { headHTML } = this.props;
     return (
@@ -23,15 +22,10 @@ class Layout extends Component {
         <section id="app-body">
           <Aside />
           <main>
-            {Object
-            .keys(loadableRoutes)
-            .map(path => {
-                const {
-                    exact,
-                    ...props
-                } = loadableRoutes[path]
-                props.exact = exact === void 0 || exact || true
-                return <Route key={path} path={path} {...props} />
+            {Object.keys(loadableRoutes).map(path => {
+              const { exact, ...props } = loadableRoutes[path];
+              props.exact = exact === void 0 || exact || true;
+              return <Route key={path} path={path} {...props} />;
             })}
           </main>
         </section>
@@ -39,7 +33,6 @@ class Layout extends Component {
       </>
     );
   }
-
 }
 
 Layout.propTypes = {};

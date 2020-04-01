@@ -1,6 +1,6 @@
-import React from "react";
-import Dashboard from "./index"; 
-import { shallow } from "enzyme";
+import React from 'react';
+import Dashboard from './index';
+import { shallow } from 'enzyme';
 
 describe('Dashboard', () => {
   it('should be truthy', () => {

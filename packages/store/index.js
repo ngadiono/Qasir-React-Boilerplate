@@ -12,11 +12,13 @@ export const history = createHistory();
 const router = routerMiddleware(history);
 const initiateMiddlewares = [router, thunk];
 
-export const store = createStore(Reducer, composeWithDevTools(
-        applyMiddleware(
-            ...initiateMiddlewares, 
-            // middlewareClientSetup,
-            // middlewareCheckLogin
-        )
+export const store = createStore(
+  Reducer,
+  composeWithDevTools(
+    applyMiddleware(
+      ...initiateMiddlewares
+      // middlewareClientSetup,
+      // middlewareCheckLogin
     )
+  )
 );

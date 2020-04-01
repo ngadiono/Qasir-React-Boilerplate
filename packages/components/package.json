@@ -1,12 +1,11 @@
 {
-    "name": "@qasir/components",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "author": "Qasir Development Team <dev@qasir.id>",
-    "license": "MIT",      
-    "dependencies": {
-      "@qasir/component-gateway": "1.0.0"
-    }
+  "name": "@qasir/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Qasir Development Team <dev@qasir.id>",
+  "license": "MIT",
+  "dependencies": {
+    "@qasir/component-gateway": "1.0.0"
+  }
 }
-  

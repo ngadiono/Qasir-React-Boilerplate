@@ -1,8 +1,8 @@
 import React, { Component, Suspense } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import { LoadingPlaceholder } from "@qasir/components";
+import { LoadingPlaceholder } from '@qasir/components';
 import Routes from '@qasir/routes';
 import StyleReset from '@qasir/styles/reset';
 
@@ -24,14 +24,14 @@ const GlobalStyle = createGlobalStyle`
 // }
 
 class Application extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <GlobalStyle />
-                <Routes />
-            </React.Fragment>
-        )
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <GlobalStyle />
+        <Routes />
+      </React.Fragment>
+    );
+  }
 }
 
 export default Application;

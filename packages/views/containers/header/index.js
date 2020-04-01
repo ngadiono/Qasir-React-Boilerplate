@@ -7,7 +7,7 @@ import Dropdown from 'antd/es/dropdown';
 import Icon from 'antd/es/icon';
 import Drawer from 'antd/es/drawer';
 import { createGlobalStyle } from 'styled-components';
-import { withTranslation } from "react-i18next";
+import { withTranslation } from 'react-i18next';
 
 import { Wrapper, ButtonHummber, Account } from './style';
 import Aside from '@qasir/views/containers/aside';
@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-`
+`;
 
 const AccountMenu = (
   <Menu>
@@ -66,77 +66,76 @@ const AccountMenu = (
 );
 
 class Header extends Component {
-
   state = { visible: false, placement: 'left' };
 
   showDrawer = () => {
-      this.setState({
-      visible: true,
-      });
+    this.setState({
+      visible: true
+    });
   };
 
   onClose = () => {
-      this.setState({
-      visible: false,
-      });
+    this.setState({
+      visible: false
+    });
   };
 
   /**
    * On change language event handler, will set the language of the whole app.
-   * 
+   *
    * @param {String}  selectedLanguage current selected language.
    */
-  handleChangeLanguage = (selectedLanguage) => {
+  handleChangeLanguage = selectedLanguage => {
     const { i18n } = this.props;
     i18n.changeLanguage(selectedLanguage);
-  }
+  };
 
   render() {
     const { i18n } = this.props;
-    
-    return(
+
+    return (
       <>
         <Helmet title="Dashboard - Qasir Boilerplate" />
         <Wrapper>
-        <GlobalStyle/>
-            <Row>
-                <Col md={6} lg={6} xs={6}>
-                    <ButtonHummber onClick={this.showDrawer}>
-                        <img src={HamberImg} />
-                    </ButtonHummber>
-                    <Drawer
-                        title=""
-                        placement='left'
-                        closable={false}
-                        onClose={this.onClose}
-                        visible={this.state.visible}
-                        >
-                        <Aside/>
-                    </Drawer>
-                </Col>
-                <Col md={18} lg={18} xs={18}>
-                    <Account>
-                      <LangSwitcher defaultLanguage={i18n.options.defaults} onChangeLanguage={this.handleChangeLanguage} />
-                        <Dropdown overlay={AccountMenu} trigger={['click']}>
-                            <a href="#">
-                                <div>
-                                    <h3>Bambhang Sujdro</h3>
-                                    <span>
-                                        Admin
-                                    </span>
-                                </div>
-                                <img src={UserImg}/>
-                                <Icon type="caret-down" />
-                            </a>
-                        </Dropdown>
-                    </Account>
-                </Col>
-            </Row>
+          <GlobalStyle />
+          <Row>
+            <Col md={6} lg={6} xs={6}>
+              <ButtonHummber onClick={this.showDrawer}>
+                <img src={HamberImg} />
+              </ButtonHummber>
+              <Drawer
+                title=""
+                placement="left"
+                closable={false}
+                onClose={this.onClose}
+                visible={this.state.visible}
+              >
+                <Aside />
+              </Drawer>
+            </Col>
+            <Col md={18} lg={18} xs={18}>
+              <Account>
+                <LangSwitcher
+                  defaultLanguage={i18n.options.defaults}
+                  onChangeLanguage={this.handleChangeLanguage}
+                />
+                <Dropdown overlay={AccountMenu} trigger={['click']}>
+                  <a href="#">
+                    <div>
+                      <h3>Bambhang Sujdro</h3>
+                      <span>Admin</span>
+                    </div>
+                    <img src={UserImg} />
+                    <Icon type="caret-down" />
+                  </a>
+                </Dropdown>
+              </Account>
+            </Col>
+          </Row>
         </Wrapper>
       </>
-   );
+    );
   }
-
 }
 
 Header.propTypes = {};

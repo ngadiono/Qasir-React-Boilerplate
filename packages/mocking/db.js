@@ -1,7 +1,7 @@
 var merchants = require('./json/samples.json');
 
-module.exports = function () {
+module.exports = function() {
   return {
-    "samples": merchants,
-  }
-}
+    samples: merchants
+  };
+};

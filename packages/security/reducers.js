@@ -7,26 +7,29 @@ import Repository from '@qasir/auth/repository';
 
 export const setClientSecret = createAction('@@QASIR_APP_SET_CLIENT_SECRET');
 
-export const generateClientSecret = () => (dispatch) => {
-  const crypto = new Crypto;
-  const storage = new Storage;
+export const generateClientSecret = () => dispatch => {
+  const crypto = new Crypto();
+  const storage = new Storage();
 
   // handle for get device id on browser using
   // fingerprint javascript
-  new Fingerprint2().get(function (result) {
-      const chiperText = crypto.encrypt(result)
-      storage.setData(Variables.STORAGE_DEVICE_ID, chiperText)
-      const repository = new Repository
-      repository.serviceGenerateClientSecret((flag) => {
-          console.log('success client secret')
-      });
-  })
-}
+  new Fingerprint2().get(function(result) {
+    const chiperText = crypto.encrypt(result);
+    storage.setData(Variables.STORAGE_DEVICE_ID, chiperText);
+    const repository = new Repository();
+    repository.serviceGenerateClientSecret(flag => {
+      console.log('success client secret');
+    });
+  });
+};
 
 const initialState = {
-  clientSecret: ""
-}
+  clientSecret: ''
+};
 
-export default createReducer({
-  [setClientSecret]: (state, clientSecret) => ({...state, clientSecret})
-}, initialState);
+export default createReducer(
+  {
+    [setClientSecret]: (state, clientSecret) => ({ ...state, clientSecret })
+  },
+  initialState
+);

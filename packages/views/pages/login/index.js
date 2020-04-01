@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { default as Form } from 'antd/es/form';
 import 'antd/es/form/style/index.css';
 
-import { FormItemEmail, FormItemPassword, Button } from "@qasir/components";
+import { FormItemEmail, FormItemPassword, Button } from '@qasir/components';
 
 import { LoginCardImg, LoginCardImgTitle, GlobalStyleLogin } from './style.js';
 
-import imgBg from "@qasir/assets/img/login-supplier-bg.png";
-import imgLogo from "@qasir/assets/img/logo/logo-qasir-red.svg";
+import imgBg from '@qasir/assets/img/login-supplier-bg.png';
+import imgLogo from '@qasir/assets/img/logo/logo-qasir-red.svg';
 
 class FormLogin extends Component {
   render() {

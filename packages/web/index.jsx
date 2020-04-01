@@ -14,12 +14,13 @@ import Application from './component/application.jsx';
 import './i18n';
 
 render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <Application/>
-        </ConnectedRouter>
-    </Provider>,
-document.getElementById('app'));
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Application />
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('app')
+);
 
 // If you want your app to work offline and load faster, you can change
 // uncomment code below. Note this comes with some pitfalls.

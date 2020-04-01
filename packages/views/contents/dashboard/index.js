@@ -1,6 +1,6 @@
 import React, { Component, Suspense, useState } from 'react';
-import { Col, Row } from "antd";
-import { useTranslation } from "react-i18next";
+import { Col, Row } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 const Dashboard = () => {
   // Use `useTranslation` hooks only in functional component,
@@ -17,13 +17,11 @@ const Dashboard = () => {
       </Row>
     </Suspense>
   );
-}
+};
 
 class Index extends Component {
   render() {
-    return (
-      <Dashboard />
-    );
+    return <Dashboard />;
   }
 }
 

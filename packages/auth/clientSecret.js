@@ -1,29 +1,29 @@
 import Curl from '@qasir/curl';
-import {ajax} from '@qasir/config';
+import { ajax } from '@qasir/config';
 
 export const VARIABLE_CLIENT_SECRET = 'cltns_ctrks';
 
 class ClientSecret extends Curl {
-    constructor() {
-        let config = {
-            baseUrl: ajax.baseUrl,
-            apiEndpoint: '',
-            headers: {
-                'CSRF-Token': ajax.csrfToken
-            }
-        }
-        super(config);
-    }
+  constructor() {
+    let config = {
+      baseUrl: ajax.baseUrl,
+      apiEndpoint: '',
+      headers: {
+        'CSRF-Token': ajax.csrfToken
+      }
+    };
+    super(config);
+  }
 
-    generate(deviceId) {
-        this.service = ajax.generateClientSecretUrl
-        this.method = 'post'
-        this.data = {
-            'browser_device_id': deviceId,
-        }
+  generate(deviceId) {
+    this.service = ajax.generateClientSecretUrl;
+    this.method = 'post';
+    this.data = {
+      browser_device_id: deviceId
+    };
 
-        return this.send();
-    }
+    return this.send();
+  }
 }
 
 export default ClientSecret;

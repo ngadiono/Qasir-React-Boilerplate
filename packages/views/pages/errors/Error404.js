@@ -10,17 +10,12 @@ const Error404 = () => (
   <>
     <Helmet title="404 Page Not Found" />
     <Wrapper>
-      <img
-        src={imgNotFound}
-        alt="not found"
-      />
+      <img src={imgNotFound} alt="not found" />
       <h3>Ehh, mau nyari apa nih?</h3>
-      <p>
-        Halaman yang dicari gak ada tuh, silahkan cek lagi ya
-      </p>
+      <p>Halaman yang dicari gak ada tuh, silahkan cek lagi ya</p>
       <Button variant="primary" size="medium">
         Kembali Ke Dashboard
-        </Button>
+      </Button>
     </Wrapper>
   </>
 );

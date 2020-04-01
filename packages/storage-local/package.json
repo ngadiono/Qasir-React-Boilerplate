@@ -1,8 +1,7 @@
 {
-    "name": "@qasir/storage-local",
-    "version": "1.0.0",
-    "main": "index.js",
-    "author": "Qasir Development Team <dev@qasir.id>",
-    "license": "MIT"
+  "name": "@qasir/storage-local",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Qasir Development Team <dev@qasir.id>",
+  "license": "MIT"
 }
-  

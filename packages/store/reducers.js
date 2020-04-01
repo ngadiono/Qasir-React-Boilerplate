@@ -5,6 +5,6 @@ import { routerReducer } from 'react-router-redux';
 // import {reducer as testReducer} from '@qasir/test'
 
 export default combineReducers({
-    routing: routerReducer,
-    // test: testReducer   
+  routing: routerReducer
+  // test: testReducer
 });
