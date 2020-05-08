@@ -32,10 +32,6 @@ Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a su
 
 [Click here for download](https://github.com/QasirID/Qasir-React-Boilerplate/archive/master.zip)
 
-### Template app from Next.js
-
-- [Custom Express Server](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express)
-
 ### Clone
 
 ```bash

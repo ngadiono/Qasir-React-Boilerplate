@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
+    "dev": "cross-env NODE_OPTIONS=\"-r esm\" node server.js",
+    "build": "cross-env NODE_OPTIONS=\"-r esm\" next build",
+    "analyze": "cross-env-shell NODE_OPTIONS=\"-r esm\" ANALYZE=true next build",
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cross-env": "^7.0.2",
+    "@ant-design/icons": "^4.1.0",
+    "antd": "^4.2.0",
+    "dayjs": "^1.8.26",
     "express": "^4.17.1",
     "next": "latest",
     "react": "^16.13.1",
@@ -17,6 +19,12 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7"
+    "@next/bundle-analyzer": "^9.3.6",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "body-parser": "^1.19.0",
+    "cross-env": "^7.0.2",
+    "esm": "^3.2.25",
+    "postcss-preset-env": "^6.7.0"
   }
 }
