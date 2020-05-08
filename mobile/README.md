@@ -34,3 +34,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Custom Express Server](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express)
 - [Ant Design Mobile](https://github.com/zeit/next.js/tree/canary/examples/with-ant-design-mobile)
 - [Styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)
+- [Jest](https://github.com/zeit/next.js/tree/canary/examples/with-jest)
