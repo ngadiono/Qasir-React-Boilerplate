@@ -35,3 +35,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Ant Design](https://github.com/zeit/next.js/tree/canary/examples/with-ant-design)
 - [Styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)
 - [Jest](https://github.com/zeit/next.js/tree/canary/examples/with-jest)
+- [SVG components](https://github.com/zeit/next.js/tree/canary/examples/svg-components)
