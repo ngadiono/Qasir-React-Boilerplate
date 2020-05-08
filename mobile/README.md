@@ -28,3 +28,9 @@ You can check out [the Next.js GitHub repository](https://github.com/zeit/next.j
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Template app from Next.js
+
+- [Custom Express Server](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express)
+- [Ant Design Mobile](https://github.com/zeit/next.js/tree/canary/examples/with-ant-design-mobile)
+- [Styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)

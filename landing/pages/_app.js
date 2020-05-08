@@ -1,5 +1,5 @@
-import App from 'next/app';
 import React from 'react';
+import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
 import 'antd/dist/antd.css';
