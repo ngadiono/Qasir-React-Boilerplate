@@ -18,10 +18,9 @@
     "lerna:clean": "lerna clean",
     "linter": "esw --ext .js --ext .jsx packages --watch --color --ignore-path .gitignore --cache",
     "dev": "npm-run-all --parallel serve:dev client",
-    "client": "cross-env NODE_ENV=development webpack --progress --watch --config ./webpack.dev.js",
+    "client": "rm -rf ./public-dev/ && cross-env NODE_ENV=development webpack --progress --watch --config ./webpack.dev.js",
     "bundle:report": "cross-env APP_ENV=production NODE_ENV=production webpack --progress --config ./webpack.report.js",
-    "build:clean": "rm -rf ./build/",
-    "build:local": "yarn run build:clean && cross-env APP_ENV=local NODE_ENV=production webpack --config ./webpack.prod.local.js",
+    "build:clean": "rm -rf ./public/",
     "build:dev": "yarn run build:clean && cross-env APP_ENV=staging NODE_ENV=production webpack --config ./webpack.prod.js",
     "build:sw": "yarn run build:clean && cross-env APP_ENV=production NODE_ENV=production webpack --config ./webpack.prod.sw.js",
     "build": "yarn run build:clean && cross-env APP_ENV=production NODE_ENV=production webpack --progress --config ./webpack.prod.js",
@@ -53,6 +52,7 @@
     "babel-loader": "8.1.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-plugin-import": "^1.12.1",
+    "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "clean-webpack-plugin": "^1.0.0",
@@ -108,7 +108,7 @@
     "@loadable/component": "^5.10.2",
     "@qasir/qasir-components": "^1.0.0",
     "ajv": "^6.5.0",
-    "antd": "^3.5.3",
+    "antd": "^4.1.4",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "compression-webpack-plugin": "^3.1.0",
@@ -139,6 +139,7 @@
     "react-app-polyfill": "^1.0.2",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
+    "react-hook-form": "^5.5.3",
     "react-i18next": "^11.2.2",
     "react-infinite-scroller": "^1.2.4",
     "react-number-format": "^4.0.7",
@@ -155,7 +156,7 @@
     "reqwest": "^2.0.5",
     "rxjs": "^6.3.2",
     "shrink-ray-current": "^4.1.2",
-    "styled-components": "^4.3.2"
+    "styled-components": "^5.1.0"
   },
   "repository": "https://github.com/QasirID/Qasir-React-Boilerplate"
 }

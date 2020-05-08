@@ -5,26 +5,27 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const JSPath = 'assets/js/';
+const localesPath = 'assets/locales';
 
 config.output = {
   filename: JSPath + 'main.js',
-  path: path.resolve(__dirname, './public')
+  path: path.resolve(__dirname, './public-dev'),
 };
 
 config.devServer = {
-  contentBase: path.join(__dirname, 'public'),
-  compress: true
+  contentBase: path.join(__dirname, 'public-dev'),
+  compress: true,
 };
 
 config.plugins.push(
   new HtmlWebpackPlugin({
     title: 'Qasir Application',
     template: './packages/server/index.html',
-    inject: true
+    inject: true,
   }),
   new ManifestPlugin({
     fileName: 'manifest.json',
-    basePath: process.env.NODE_ENV === 'production' ? '/build/' : '/public/',
+    basePath: '/public-dev/',
     seed: {
       name: 'Qasir Application',
       short_name: 'Short app name',
@@ -37,14 +38,14 @@ config.plugins.push(
       theme_color: '#3f51b5',
       description: 'description app',
       dir: 'ltr',
-      lang: 'en-US'
-    }
+      lang: 'en-US',
+    },
   }),
   new CopyPlugin([
     {
       from: './packages/assets/locales/',
-      to: 'assets/locales/'
-    }
+      to: localesPath,
+    },
   ])
 );
 

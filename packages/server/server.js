@@ -17,8 +17,7 @@ const path = require('path');
 
 app.set('views', __dirname);
 
-const PublicPath =
-  process.env.NODE_ENV == 'production' ? './build' : './public';
+const PublicPath = process.env.NODE_ENV == 'production' ? './public' : './public-dev';
 
 // compress all responses
 app.use(shrinkRay());
@@ -31,7 +30,7 @@ app.use(csrf({ cookie: true }));
 app.use(express.static(PublicPath));
 expressNunjucks(app, {
   watch: isDev,
-  noCache: isDev
+  noCache: isDev,
 });
 
 const getHtml = () =>
@@ -61,7 +60,7 @@ app.get('*', (req, res) => {
 });
 
 // Checking public folder
-fs.access(PublicPath, fs.F_OK, err => {
+fs.access(PublicPath, fs.F_OK, (err) => {
   if (err) {
     console.log('Attention! Please run "npm run dev or yarn dev"');
     return;
@@ -74,6 +73,4 @@ if (process.env.APP_PORT) {
   runningPort = process.env.APP_PORT;
 }
 
-app.listen(runningPort, () =>
-  console.log('Qasir Admin Panel listening on port ' + runningPort + '! ')
-);
+app.listen(runningPort, () => console.log('Qasir Admin Panel listening on port ' + runningPort + '! '));

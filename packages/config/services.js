@@ -1,19 +1,9 @@
-let servicesConfig = {
-  // auth
-  // "generate_client_secret": "/register/device"
-};
+const apiAuth = '/api/v1/auth';
+const apiUser = `${apiAuth}/user`;
 
-switch (process.env.APP_ENV) {
-  case 'local':
-    servicesConfig = Object.assign(servicesConfig, {
-      base_url: process.env.HOST_API_URL
-    });
-    break;
-  default:
-    servicesConfig = Object.assign(servicesConfig, {
-      base_url: process.env.HOST_API_URL
-    });
-    break;
-}
+let servicesConfig = {
+  base_url: process.env.API_HOST,
+  login_user: `${apiUser}/login`,
+};
 
 export { servicesConfig };

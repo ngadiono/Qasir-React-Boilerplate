@@ -10,7 +10,7 @@ const JSPath = 'assets/js/';
 
 config.output = {
   filename: JSPath + '[name].[contenthash].js',
-  path: path.resolve(__dirname, './build')
+  path: path.resolve(__dirname, './public'),
 };
 
 config.devtool = '';
@@ -18,19 +18,19 @@ config.devtool = '';
 let outputFilename = 'index.html';
 
 config.plugins.push(
-  new CleanWebpackPlugin(['./build/*.js', './build/*.css'], {
-    exclude: ['./build/.gitignore', './build/fonts/*']
+  new CleanWebpackPlugin(['./public/*.js', './public/*.css'], {
+    exclude: ['./public/.gitignore', './public/fonts/*'],
   }),
   new HtmlWebpackPlugin({
     title: 'Qasir Application',
     template: './packages/server/index.html',
     minify: true,
     cache: true,
-    filename: outputFilename
+    filename: outputFilename,
   }),
   new ManifestPlugin({
     fileName: 'manifest.json',
-    basePath: process.env.NODE_ENV === 'production' ? '/build/' : '/public/',
+    basePath: '/public/',
     seed: {
       name: 'Qasir Application',
       short_name: 'Short app name',
@@ -43,21 +43,21 @@ config.plugins.push(
       theme_color: '#3f51b5',
       description: 'description app',
       dir: 'ltr',
-      lang: 'en-US'
-    }
+      lang: 'en-US',
+    },
   }),
   new CopyPlugin([
     {
       from: './packages/assets/locales/',
-      to: 'assets/locales/'
-    }
+      to: 'assets/locales/',
+    },
   ]),
   new CompressionPlugin({
     filename: '[path].gz[query]',
     algorithm: 'gzip',
     test: /\.js$|\.css$|\.html$/,
     threshold: 10240,
-    minRatio: 0.8
+    minRatio: 0.8,
   }),
   new CompressionPlugin({
     filename: '[path].br[query]',
@@ -65,7 +65,7 @@ config.plugins.push(
     test: /\.(js|css|html|svg)$/,
     compressionOptions: { level: 11 },
     threshold: 10240,
-    minRatio: 0.8
+    minRatio: 0.8,
   })
 );
 
@@ -76,10 +76,10 @@ config.optimization = Object.assign(config.optimization, {
       commons: {
         test: /[\\/]node_modules[\\/]/,
         name: 'vendors',
-        chunks: 'all'
-      }
-    }
-  }
+        chunks: 'all',
+      },
+    },
+  },
 });
 
 module.exports = config;

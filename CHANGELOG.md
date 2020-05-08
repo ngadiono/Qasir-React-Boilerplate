@@ -7,11 +7,17 @@
 - Update document format code
 - Update babel config (adding dynamic import for lodash)
 - Update webpack config
+- Update antd v4
+- Update styled components
+- Update folder render for diff development (build) & production (public)
+- Remove webpack build local
 - Remove editor config
 
 ### Features
 
 - Adding new algorithm compression build files (gzip, br)
+- Adding react hooks form plugins
+- Adding gitignore example
 
 ## V1.1.1 (2020-02-27)
 

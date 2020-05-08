@@ -15,9 +15,7 @@ let plugins = [];
 plugins.push(
   new MiniCssExtractPlugin({
     filename:
-      process.env.NODE_ENV === 'production'
-        ? CSSPath + '[name].[contenthash].css'
-        : CSSPath + 'main.css'
+      process.env.NODE_ENV === 'production' ? CSSPath + '[name].[contenthash].css' : CSSPath + 'main.css',
   })
 );
 
@@ -30,25 +28,22 @@ let configurationWebpack = {
         parallel: true,
         sourceMap: true,
         terserOptions: {
-          ecma: 6
-        }
+          ecma: 6,
+        },
       }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()],
   entry: ['./packages/web/index.jsx'],
   output: {
-    path: __dirname
+    path: __dirname,
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.css'],
     alias: {
-      moment$: 'moment/moment.js'
-    }
+      moment$: 'moment/moment.js',
+    },
   },
   stats: 'errors-only',
   module: {
@@ -77,18 +72,28 @@ let configurationWebpack = {
             '@babel/plugin-proposal-export-default-from',
             '@babel/plugin-proposal-class-properties',
             '@babel/plugin-proposal-object-rest-spread',
-            '@babel/plugin-syntax-dynamic-import'
-          ]
-        }
+            '@babel/plugin-syntax-dynamic-import',
+            [
+              'babel-plugin-styled-components',
+              {
+                ssr: false,
+              },
+            ],
+            [
+              'import',
+              {
+                libraryName: 'lodash',
+                libraryDirectory: '',
+                camel2DashComponentName: false,
+              },
+              'lodash',
+            ],
+          ],
+        },
       },
       {
         test: /\.[s]?[ac]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|gif|svg|jpeg)$/,
@@ -98,33 +103,33 @@ let configurationWebpack = {
             options: {
               name: '[hash:12].[ext]',
               publicPath: ImgPath,
-              outputPath: ImgPath
-            }
+              outputPath: ImgPath,
+            },
           },
           {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                quality: 65,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
-                enabled: false
+                enabled: false,
               },
               pngquant: {
                 quality: '65-90',
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
-                interlaced: false
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
+                interlaced: false,
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
 
 plugins.push(
@@ -135,8 +140,8 @@ plugins.push(
       HOST_API_URL: "'" + process.env.API_HOST + "'",
       API_KEY_MAPS: "'" + process.env.API_KEY_MAPS + "'",
       WEB_API_KEY: "'" + process.env.WEB_API_KEY + "'",
-      PWA: "'" + process.env.PWA + "'"
-    }
+      PWA: "'" + process.env.PWA + "'",
+    },
   })
 );
 

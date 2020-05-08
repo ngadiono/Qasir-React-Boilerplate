@@ -3,27 +3,28 @@ var path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackMonitor = require('webpack-monitor');
+const CopyPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const JSPath = 'assets/js/';
 
 config.output = {
   filename: JSPath + '[name].[contenthash].js',
-  path: path.resolve(__dirname, './build')
+  path: path.resolve(__dirname, './build'),
 };
 let outputFilename = 'index.html';
 config.plugins.push(
   new CleanWebpackPlugin(['./build/*.js', './build/*.css'], {
-    exclude: ['./build/.gitignore', './build/fonts/*']
+    exclude: ['./build/.gitignore', './build/fonts/*'],
   }),
   new HtmlWebpackPlugin({
     title: 'Qasir Mitra Application',
     template: './packages/server/index.html',
     minify: true,
     cache: true,
-    filename: outputFilename
+    filename: outputFilename,
   }),
   new ManifestPlugin({
     fileName: 'manifest.json',
@@ -40,17 +41,38 @@ config.plugins.push(
       theme_color: '#3f51b5',
       description: 'description app',
       dir: 'ltr',
-      lang: 'en-US'
-    }
+      lang: 'en-US',
+    },
+  }),
+  new CopyPlugin([
+    {
+      from: './packages/assets/locales/',
+      to: 'assets/locales/',
+    },
+  ]),
+  new CompressionPlugin({
+    filename: '[path].gz[query]',
+    algorithm: 'gzip',
+    test: /\.js$|\.css$|\.html$/,
+    threshold: 10240,
+    minRatio: 0.8,
+  }),
+  new CompressionPlugin({
+    filename: '[path].br[query]',
+    algorithm: 'brotliCompress',
+    test: /\.(js|css|html|svg)$/,
+    compressionOptions: { level: 11 },
+    threshold: 10240,
+    minRatio: 0.8,
   }),
   new BundleAnalyzerPlugin({
-    analyzerPort: 8006
+    analyzerPort: 8006,
   }),
   new WebpackMonitor({
     capture: true,
     target: './monitor/stats.json',
     launch: true,
-    port: 8007
+    port: 8007,
   })
 );
 
@@ -58,13 +80,13 @@ config.optimization = Object.assign(config.optimization, {
   runtimeChunk: 'single',
   splitChunks: {
     cacheGroups: {
-      vendor: {
+      commons: {
         test: /[\\/]node_modules[\\/]/,
         name: 'vendors',
-        chunks: 'all'
-      }
-    }
-  }
+        chunks: 'all',
+      },
+    },
+  },
 });
 
 module.exports = config;
