@@ -14,11 +14,12 @@ export default function Home() {
       <Head>
         <title>Qasir Boilerplate Dashboard</title>
         <link rel="icon" href="/img/icons/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <Title>Qasir</Title>
+          <Title>Qasir</Title> Dashboard
         </h1>
 
         <p className="description">
@@ -26,37 +27,24 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Qasir react boilerplate features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
+          <a
+            href="https://github.com/qasir-id/Qasir-React-Boilerplate/blob/nextjs/js/dashboard/README.md"
+            className="card"
+            target="_blank"
+          >
             <h3>Learn &rarr;</h3>
             <p>Learn about Qasir react boilerplate structure.</p>
           </a>
 
           <a href="https://github.com/zeit/next.js/tree/master/examples" className="card">
             <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your project site to a public URL with Vercel.</p>
+            <p>Discover layout dashboard with components.</p>
           </a>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.qasir.id/" target="_blank" rel="noopener noreferrer">
           Powered by <img src="/img/logo/qasir.svg" alt="Qasir Logo" className="logo" />
         </a>
       </footer>
@@ -159,14 +147,15 @@ export default function Home() {
           text-decoration: none;
           border: 1px solid #eaeaea;
           border-radius: 10px;
+          background-color: #ffffff;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
 
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #f04b32;
+          border-color: #f04b32;
         }
 
         .card h3 {
@@ -197,8 +186,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-            Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          font-family: 'Montserrat', sans-serif;
         }
 
         * {

@@ -1,10 +1,11 @@
+// Vendor packages
 import React from 'react';
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
+// Styles
+import StyleReset from 'styles/reset';
 import 'antd/dist/antd.css';
-import '../styles/vars.css';
-import '../styles/global.css';
 
 const theme = {
   colors: {
@@ -12,7 +13,7 @@ const theme = {
   },
 };
 
-export default class MyApp extends App {
+export default class RootApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (

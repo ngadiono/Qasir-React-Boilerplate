@@ -35,12 +35,13 @@ Inside there are 2 code styles, Javascript and Typescript. Each there are 3 vari
 1.  Ensure you have the latest version of Node installed. We also recommend you install Yarn as well.
 
     ```
-    You have to be on Node >= 8.x, Yarn and NPM.
+    You have to be on Node >= 8.x, Yarn or NPM.
     ```
 
 2.  Download code and change name directory root.
 
     **Javascript code**
+
     Landing
 
     ```
@@ -72,6 +73,7 @@ Inside there are 2 code styles, Javascript and Typescript. Each there are 3 vari
     ```
 
     **Typescript code**
+
     Landing
 
     ```
