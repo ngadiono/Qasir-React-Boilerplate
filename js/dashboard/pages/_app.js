@@ -13,12 +13,17 @@ const theme = {
   },
 };
 
+const Noop = ({ children }) => children;
+
 export default class RootApp extends App {
   render() {
     const { Component, pageProps } = this.props;
+    const Layout = Component.Layout || Noop;
     return (
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     );
   }
