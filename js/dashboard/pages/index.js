@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -36,10 +37,12 @@ export default function Home() {
             <p>Learn about Qasir react boilerplate structure.</p>
           </a>
 
-          <a href="https://github.com/zeit/next.js/tree/master/examples" className="card">
-            <h3>Examples &rarr;</h3>
-            <p>Discover layout dashboard with components.</p>
-          </a>
+          <Link href="/auth/login">
+            <a className="card">
+              <h3>Examples &rarr;</h3>
+              <p>Discover layout dashboard with components.</p>
+            </a>
+          </Link>
         </div>
       </main>
 
