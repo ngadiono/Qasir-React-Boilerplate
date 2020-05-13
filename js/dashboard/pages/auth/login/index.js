@@ -42,7 +42,7 @@ const Login = ({ appName }) => {
               <Checkbox>Remember me</Checkbox>
             </Form.Item>
 
-            <Link href="/auth/forgot">
+            <Link href="/auth/forgot-password">
               <a className="login-form-forgot">Forgot password</a>
             </Link>
           </Form.Item>
