@@ -1,9 +1,9 @@
 import { css, createGlobalStyle } from 'styled-components';
 
-export const StyleReset = css`
+export const StyleReset = createGlobalStyle`${css`
   /* http://meyerweb.com/eric/tools/css/reset/
-   v4.0 | 20180602
-   License: none (public domain)
+ v4.0 | 20180602
+ License: none (public domain)
 */
   html,
   body,
@@ -95,7 +95,7 @@ export const StyleReset = css`
   }
   /* main for dekstop */
   /* main{
-  margin-left: 240px !important;
+margin-left: 240px !important;
 } */
 
   /* HTML5 display-role reset for older browsers */
@@ -145,7 +145,7 @@ export const StyleReset = css`
 
   html {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 12px;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
@@ -155,8 +155,6 @@ export const StyleReset = css`
     font-family: 'Montserrat', sans-serif !important;
     background: #f2f4f7 !important;
   }
-`;
-
-export const Reset = createGlobalStyle`${StyleReset}`;
+`}`;
 
 export default StyleReset;

@@ -110,6 +110,9 @@ export default function Home() {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
+          user-select: none;
+          text-transform: uppercase;
+          letter-spacing: 2px;
         }
 
         .title,
@@ -120,6 +123,7 @@ export default function Home() {
         .description {
           line-height: 1.5;
           font-size: 1.5rem;
+          margin-top: 10px;
         }
 
         code {
@@ -176,24 +180,16 @@ export default function Home() {
           height: 1em;
         }
 
+        footer a {
+          font-size: 1.4rem;
+          user-select: none;
+        }
+
         @media (max-width: 600px) {
           .grid {
             width: 100%;
             flex-direction: column;
           }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: 'Montserrat', sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
         }
       `}</style>
     </div>

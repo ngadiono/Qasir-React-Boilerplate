@@ -1,11 +1,11 @@
 // Vendor packages
 import React from 'react';
 import App from 'next/app';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, createGlobalStyle, css } from 'styled-components';
 
 // Styles
-import StyleReset from 'styles/reset';
 import 'antd/dist/antd.css';
+import StyleReset from '../styles/reset';
 
 const theme = {
   colors: {
@@ -21,6 +21,7 @@ export default class MyApp extends App {
     const Layout = Component.Layout || Noop;
     return (
       <ThemeProvider theme={theme}>
+        <StyleReset />
         <Layout>
           <Component {...pageProps} />
         </Layout>
