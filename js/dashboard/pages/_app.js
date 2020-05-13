@@ -15,7 +15,7 @@ const theme = {
 
 const Noop = ({ children }) => children;
 
-export default class RootApp extends App {
+export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     const Layout = Component.Layout || Noop;

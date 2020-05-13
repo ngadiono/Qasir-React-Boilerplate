@@ -3,4 +3,4 @@ import { Layout } from 'antd';
 
 const { Content } = Layout;
 
-export default () => <Content>Content</Content>;
+export default ({ children }) => <Content>{children}</Content>;

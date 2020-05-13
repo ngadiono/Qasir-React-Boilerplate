@@ -6,7 +6,7 @@ import Header from './header';
 import Content from './Content';
 import Footer from './Footer';
 
-const Layout1 = ({ children }) => {
+export default ({ children }) => {
   return (
     <Layout>
       <Header />
@@ -15,5 +15,3 @@ const Layout1 = ({ children }) => {
     </Layout>
   );
 };
-
-export default Layout1;
