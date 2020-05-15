@@ -22,7 +22,7 @@ export default function Home({ appName }) {
       <div className="container">
         <main>
           <h1 className="title">
-            <Title>Qasir</Title> Dashboard yayay
+            <Title>Qasir</Title> Dashboard
           </h1>
 
           <p className="description">

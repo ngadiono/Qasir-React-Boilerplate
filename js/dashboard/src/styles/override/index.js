@@ -6,7 +6,7 @@ import AntdInput from './antd/input';
 
 const StyleOverride = createGlobalStyle`  
   ${css`
-    .qsr {
+    #qasir-app {
       ${AntdInput}
     }
   `}
