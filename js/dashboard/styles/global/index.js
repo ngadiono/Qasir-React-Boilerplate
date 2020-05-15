@@ -1,5 +1,9 @@
 import { css, createGlobalStyle } from 'styled-components';
 
-const StyleGlobal = createGlobalStyle`${css``}`;
+import NProgress from './nprogress';
+
+const StyleGlobal = createGlobalStyle`${css`
+  ${NProgress}
+`}`;
 
 export default StyleGlobal;
