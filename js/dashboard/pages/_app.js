@@ -1,13 +1,17 @@
 // Next
 import App from 'next/app';
 import Head from 'next/head';
+import Router from 'next/router';
 
 // Vendors
 import { ThemeProvider } from 'styled-components';
+import NProgress from 'nprogress';
 
 // Styles
 import 'antd/dist/antd.css';
 import StyleReset from '../styles/reset';
+import StyleGlobal from '../styles/global';
+import StyleOverride from '../styles/override';
 
 const appName = 'Qasir Boilerplate';
 const theme = {
@@ -17,6 +21,14 @@ const theme = {
 };
 
 const Noop = ({ children }) => children;
+
+// Loading pre-rendering
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+});
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 export default class MyApp extends App {
   render() {
@@ -29,7 +41,11 @@ export default class MyApp extends App {
           <link rel="icon" href="/img/icons/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" />
         </Head>
+
         <StyleReset />
+        <StyleGlobal />
+        <StyleOverride />
+
         <Layout>
           <Component {...pageProps} appName={appName} />
         </Layout>
