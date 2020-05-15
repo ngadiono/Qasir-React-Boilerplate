@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // Vendors
-import Button from 'qasir/lib/base/button';
+import { Button } from 'antd';
 
 // Components
 import Error from 'components/errors';
