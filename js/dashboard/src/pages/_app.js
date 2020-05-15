@@ -1,11 +1,12 @@
+// Vendors
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import NProgress from 'nprogress';
+
 // Next
 import App from 'next/app';
 import Head from 'next/head';
 import Router from 'next/router';
-
-// Vendors
-import { ThemeProvider } from 'styled-components';
-import NProgress from 'nprogress';
 
 // Configs
 import { appEnvProd } from 'config/constants';

@@ -35,6 +35,7 @@ const compose = (plugins) => ({
 
 // Bundle analyzer
 const withBundleAnalyzer = require('@next/bundle-analyzer');
+
 module.exports = compose([
   [
     withBundleAnalyzer,

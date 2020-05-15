@@ -1,9 +1,10 @@
+// Vendors
+import React from 'react';
+import styled from 'styled-components';
+
 // Next
 import Head from 'next/head';
 import Link from 'next/link';
-
-// Vendors
-import styled from 'styled-components';
 
 const Title = styled.span`
   font-size: 50px;
