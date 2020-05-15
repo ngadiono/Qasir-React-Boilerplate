@@ -48,10 +48,10 @@ module.exports = compose([
 const path = require('path');
 module.exports = {
   webpack(config, options) {
-    config.resolve.alias['components'] = path.join(__dirname, 'components');
-    config.resolve.alias['config'] = path.join(__dirname, 'config');
-    config.resolve.alias['layouts'] = path.join(__dirname, 'layouts');
-    config.resolve.alias['styles'] = path.join(__dirname, 'styles');
+    config.resolve.alias['components'] = path.join(__dirname, 'src/components');
+    config.resolve.alias['config'] = path.join(__dirname, 'src/config');
+    config.resolve.alias['layouts'] = path.join(__dirname, 'src/layouts');
+    config.resolve.alias['styles'] = path.join(__dirname, 'src/styles');
     return config;
   },
 };

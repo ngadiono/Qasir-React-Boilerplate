@@ -5,11 +5,12 @@ import Link from 'next/link';
 // Vendors
 import styled from 'styled-components';
 
-const Title = styled.h1`
+const Title = styled.span`
   font-size: 50px;
   display: inline-block;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.primary};
+  /* color: ${({ theme }) => theme.colors.primary}; */
+  color: #f04b32;
 `;
 
 export default function Home({ appName }) {
@@ -21,7 +22,7 @@ export default function Home({ appName }) {
       <div className="container">
         <main>
           <h1 className="title">
-            <Title>Qasir</Title> Dashboard
+            <Title>Qasir</Title> Dashboard yayay
           </h1>
 
           <p className="description">
