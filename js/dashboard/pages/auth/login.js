@@ -6,9 +6,6 @@ import Link from 'next/link';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-// Styles
-import { Wrapper } from './style';
-
 const Login = ({ appName }) => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
@@ -19,7 +16,7 @@ const Login = ({ appName }) => {
       <Head>
         <title>Member Area - {appName}</title>
       </Head>
-      <Wrapper>
+      <>
         <img src="https://dummyimage.com/400x200/000/fff" alt="logo" style={{ marginBottom: '50px' }} />
         <Form
           name="normal_login"
@@ -59,7 +56,7 @@ const Login = ({ appName }) => {
             </Link>
           </Form.Item>
         </Form>
-      </Wrapper>
+      </>
     </>
   );
 };

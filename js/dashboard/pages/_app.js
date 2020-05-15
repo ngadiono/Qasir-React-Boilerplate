@@ -27,7 +27,7 @@ const Noop = ({ children }) => children;
 
 // Loading pre-rendering
 Router.events.on('routeChangeStart', (url) => {
-  if (process.env.APP_ENV !== appEnvProd) console.log(`Loading: ${url}`);
+  if (process.env.NEXT_PUBLIC_APP_ENV !== appEnvProd) console.log(`Loading: ${url}`);
   NProgress.start();
 });
 Router.events.on('routeChangeComplete', () => NProgress.done());

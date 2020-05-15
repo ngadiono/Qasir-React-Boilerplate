@@ -10,14 +10,20 @@ import {
 } from '@ant-design/icons';
 
 // Layouts
-import Layout1 from '../../layouts/layout-1';
+import Layout1 from 'layouts/layout-1';
 
 const { Header, Sider, Content } = Layout;
 
 const Dashboard = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggle = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+      <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<UserOutlined />}>
@@ -33,9 +39,9 @@ const Dashboard = () => {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger',
-            onClick: this.toggle,
+            onClick: toggle,
           })}
         </Header>
         <Content
