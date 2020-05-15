@@ -55,3 +55,15 @@ module.exports = {
     return config;
   },
 };
+
+// Env
+require('dotenv').config();
+module.exports = {
+  env: {
+    // Reference a variable that was defined in the .env file and make it available at Build Time
+    APP_ENV: process.env.APP_ENV,
+    APP_PORT: process.env.APP_PORT,
+    NODE_ENV: process.env.NODE_ENV,
+    API_HOST: process.env.API_HOST,
+  },
+};

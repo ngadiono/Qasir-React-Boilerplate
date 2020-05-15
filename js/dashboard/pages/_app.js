@@ -7,6 +7,9 @@ import Router from 'next/router';
 import { ThemeProvider } from 'styled-components';
 import NProgress from 'nprogress';
 
+// Configs
+import { appEnvProd } from 'config/constants';
+
 // Styles
 import 'antd/dist/antd.css';
 import StyleReset from '../styles/reset';
@@ -24,7 +27,7 @@ const Noop = ({ children }) => children;
 
 // Loading pre-rendering
 Router.events.on('routeChangeStart', (url) => {
-  console.log(`Loading: ${url}`);
+  if (process.env.APP_ENV !== appEnvProd) console.log(`Loading: ${url}`);
   NProgress.start();
 });
 Router.events.on('routeChangeComplete', () => NProgress.done());
