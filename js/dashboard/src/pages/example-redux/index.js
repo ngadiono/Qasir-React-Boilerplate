@@ -59,11 +59,11 @@ const Examples = () => {
 };
 
 class Index extends PureComponent {
-  static getInitialProps({ store, req }) {
-    store.dispatch(serverRenderClock(!!req));
+  // static getInitialProps({ store, req }) {
+  //   store.dispatch(serverRenderClock(!!req));
 
-    return {};
-  }
+  //   return {};
+  // }
 
   componentDidMount() {
     this.timer = this.props.startClock();
