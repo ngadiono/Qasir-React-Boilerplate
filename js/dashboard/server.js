@@ -20,7 +20,7 @@ app.prepare().then(() => {
   server.listen(port, (err) => {
     if (err) throw err;
     if (dev) {
-      console.log(`> Dev Application Ready on http://localhost:${port}`);
+      console.log(`> Dev Application Ready on http://localhost:${port} => HAPPY CODING :D`);
     } else {
       console.log(`> Application is already running`);
     }
