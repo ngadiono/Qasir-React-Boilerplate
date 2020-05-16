@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import * as types from './types';
 
 // COUNTER REDUCER
@@ -40,4 +39,4 @@ const reducers = {
   timer: timerReducer,
 };
 
-export default combineReducers(reducers);
+export default reducers;
