@@ -1,5 +1,6 @@
 // Vendors
 import React from 'react';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import NProgress from 'nprogress';
 
@@ -10,6 +11,7 @@ import Router from 'next/router';
 
 // Configs
 import { appEnvProd } from 'config/constants';
+import withReduxStore from 'config/redux/withReduxStore';
 
 // Styles
 import 'antd/dist/antd.css';
@@ -34,27 +36,34 @@ Router.events.on('routeChangeStart', (url) => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default class MyApp extends App {
+class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
     const Layout = Component.Layout || Noop;
     return (
-      <ThemeProvider theme={theme}>
-        <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="icon" href="/img/icons/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" />
-          <body id="qasir-app" />
-        </Head>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Head>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            <link rel="icon" href="/img/icons/favicon.ico" />
+            <link
+              href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+              rel="stylesheet"
+            />
+            <body id="qasir-app" />
+          </Head>
 
-        <StyleReset />
-        <StyleGlobal />
-        <StyleOverride />
+          <StyleReset />
+          <StyleGlobal />
+          <StyleOverride />
 
-        <Layout>
-          <Component {...pageProps} appName={appName} />
-        </Layout>
-      </ThemeProvider>
+          <Layout>
+            <Component {...pageProps} appName={appName} />
+          </Layout>
+        </ThemeProvider>
+      </Provider>
     );
   }
 }
+
+export default withReduxStore(MyApp);

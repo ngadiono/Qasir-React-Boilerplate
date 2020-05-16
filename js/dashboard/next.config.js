@@ -2,9 +2,11 @@ const path = require('path');
 const compose = (plugins) => ({
   webpack(config, options) {
     // Absolute import
+    config.resolve.alias['components'] = path.join(__dirname, 'src/components');
     config.resolve.alias['config'] = path.join(__dirname, 'src/config');
     config.resolve.alias['layouts'] = path.join(__dirname, 'src/layouts');
-    config.resolve.alias['components'] = path.join(__dirname, 'src/components');
+    config.resolve.alias['lib'] = path.join(__dirname, 'src/lib');
+    config.resolve.alias['modules'] = path.join(__dirname, 'src/modules');
     config.resolve.alias['styles'] = path.join(__dirname, 'src/styles');
 
     return plugins.reduce((config, plugin) => {
@@ -50,14 +52,3 @@ module.exports = compose([
     },
   ],
 ]);
-
-// Absolute import
-// const path = require('path');
-// module.exports = {
-//   webpack(config, options) {
-//     // config.resolve.alias['components'] = path.join(__dirname, 'src/components');
-//     // config.resolve.alias['layouts'] = path.join(__dirname, 'src/layouts');
-//     // config.resolve.alias['styles'] = path.join(__dirname, 'src/styles');
-//     return config;
-//   },
-// };
