@@ -1,58 +1,157 @@
-# Qasir React Boilerplate
+<p align="center">
+  <a href="https://example.com/">
+    <img src="https://www.qasir.id/assets/v2/images/logo.svg" alt="Qasir" width=150 height=50>
+  </a>
 
-Qasir's Frontend Mitra (ReactJS Seed) has been designed to provide you with a super fast test driven front-end development lifecycle. Everything you need should be just one command away.
+  <h4 align="center">Qasir React Boilerplate</h4>
 
-|:metal:|Includes|
-|:-:|:---|
-|:gear:| Babel 7|
-|📦| Webpack 4|
-|⚛| React 16|
-|:factory:| Redux 3|
-|:robot:| Express Server|
-|:sparkling_heart:| Airbnb Styling|
-|:fire:| Hot Module Replacement|
-|:scissors:| Code Splitting|
-|:hamburger:| Server Side Rendering|
+  <p align="center">
+    Qasir's Frontend Framework has been designed to provide you with a super fast test driven front-end development lifecycle. Everything you need should be just one command away.
+    <br>
+    <a href="https://github.com/qasir-id/Qasir-React-Boilerplate/issues/new?template=bug.md">Report bug</a>
+    ·
+    <a href="https://github.com/qasir-id/Qasir-React-Boilerplate/issues/new?template=feature.md&labels=feature">Request feature</a>
+  </p>
+</p>
 
-## Pre requirements
-* [Node.js](https://nodejs.org/)
+## Table of contents
 
-## Libraries docs
-* [React](https://reactjs.org/)
-* [Redux](https://redux.js.org/introduction)
-* [Webpack](https://webpack.js.org/)
-* [Babel](https://babeljs.io)
-* [Express](http://expressjs.com/)
+- [Getting Started](#getting-started)
+- [Quick start](#quick-start)
+- [Status](#status)
+- [What's included](#whats-included)
+- [Bugs and feature requests](#bugs-and-feature-requests)
+- [Thanks](#thanks)
+- [Copyright and license](#copyright-and-license)
 
-## Getting started
+## Getting Started
 
-### Download
-[Click here for download](https://github.com/QasirID/Qasir-React-Boilerplate/archive/master.zip)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Clone
-```bash
-$ git clone https://github.com/QasirID/Qasir-React-Boilerplate.git <YOUR_FOLDER_NAME>
-$ cd <YOUR_FOLDER_NAME>
+Inside there are 2 code styles, Javascript and Typescript. Each there are 3 variants : Landing, dashboard and mobile.
 
-```
+## Quick start
 
-### Installation
+1.  Ensure you have the latest version of Node installed. We also recommend you install Yarn as well.
 
-1. Ensure you have the latest version of Node installed. We also recommend you install Yarn as well.
+    ```
+    You have to be on Node >= 8.x, Yarn or NPM.
+    ```
 
-```
-You have to be on Node >= 8.x and Yarn >= 1.5. 
-```
-2. Download code from [Qasir React Boilerplate (Click for download)](https://github.com/QasirID/Qasir-React-Boilerplate/archive/1.0.5.zip) and change name directory root.
-3. Run the installation script.
+2.  Download code and change name directory root.
 
-```
-npm run install or yarn install
-```
-4. Running the example website, from within the root directory run the local web server using.
+    **Javascript code**
 
-```
-npm run dev or yarn dev
-npm run serve:dev or yarn serve:dev
-```
-5. Load the example site at [http://localhost:3000/#/welcome](http://localhost:3000/#/welcome) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+    Landing
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/landing"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/landing"
+    ```
+
+    Dashboard
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/dashboard"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/dashboard"
+    ```
+
+    Mobile
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/mobile"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/js/mobile"
+    ```
+
+    **Typescript code**
+
+    Landing
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/landing"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/landing"
+    ```
+
+    Dashboard
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/dashboard"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/dashboard"
+    ```
+
+    Mobile
+
+    ```
+    npm init next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/mobile"
+    ```
+
+    ```
+    yarn create next-app project-name --example "https://github.com/qasir-id/Qasir-React-Boilerplate/tree/master/ts/mobile"
+    ```
+
+3.  You now have a new directory called `project-name`. Let’s `cd` into it:
+
+    ```
+    cd project-name
+    ```
+
+4.  Run the installation script.
+
+    ```
+    npm run install
+    npm run dev
+    ```
+
+    ```
+    yarn install
+    yarn dev
+    ```
+
+5.  Load the example site at [http://localhost:3000](http://localhost:3000) if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+
+## Status
+
+On Going Development
+
+## What's included
+
+|      :metal:      | Includes               |
+| :---------------: | :--------------------- |
+|      :gear:       | Express Server         |
+|        📦         | Webpack 4              |
+|         ⚛         | React 16               |
+|     :factory:     | Redux 3                |
+|      :robot:      | Dynamic Routing        |
+| :sparkling_heart: | Airbnb Styling         |
+|      :fire:       | Hot Module Replacement |
+|    :scissors:     | Code Splitting         |
+|    :hamburger:    | Server Side Rendering  |
+
+## Bugs and feature requests
+
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/qasir-id/Qasir-React-Boilerplate/blob/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/qasir-id/Qasir-React-Boilerplate/issues/new).
+
+## Thanks
+
+Big thanks for [Next.js](https://nextjs.org/)
+
+## Copyright and license
+
+Code and documentation copyright 2020 the authors. Code released under the [MIT License](https://github.com/qasir-id/Qasir-React-Boilerplate/blob/master/LICENSE).
+
+Enjoy :metal:
