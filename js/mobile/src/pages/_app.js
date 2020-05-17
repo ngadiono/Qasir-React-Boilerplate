@@ -14,7 +14,6 @@ import { appEnvProd } from 'config/constants';
 import withReduxStore from 'config/redux/withReduxStore';
 
 // Styles
-import 'antd/dist/antd.css';
 import StyleReset from 'styles/reset';
 import StyleGlobal from 'styles/global';
 import StyleOverride from 'styles/override';
@@ -44,7 +43,10 @@ class MyApp extends App {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Head>
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+            />
             <link rel="icon" href="/img/icons/favicon.ico" />
             <link
               href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"

@@ -1,52 +1,16 @@
-const compose = (plugins) => ({
-  webpack(config, options) {
-    return plugins.reduce((config, plugin) => {
-      if (plugin instanceof Array) {
-        const [_plugin, ...args] = plugin;
-        plugin = _plugin(...args);
-      }
-      if (plugin instanceof Function) {
-        plugin = plugin();
-      }
-      if (plugin && plugin.webpack instanceof Function) {
-        return plugin.webpack(config, options);
-      }
-      return config;
-    }, config);
-  },
-
-  webpackDevMiddleware(config) {
-    return plugins.reduce((config, plugin) => {
-      if (plugin instanceof Array) {
-        const [_plugin, ...args] = plugin;
-        plugin = _plugin(...args);
-      }
-      if (plugin instanceof Function) {
-        plugin = plugin();
-      }
-      if (plugin && plugin.webpackDevMiddleware instanceof Function) {
-        return plugin.webpackDevMiddleware(config);
-      }
-      return config;
-    }, config);
-  },
-});
-
-const withBundleAnalyzer = require('@next/bundle-analyzer');
-
+const path = require('path');
 const withCSS = require('@zeit/next-css');
-
-module.exports = compose([
-  [
-    withBundleAnalyzer,
-    {
-      enabled: process.env.ANALYZE === 'true',
-    },
-  ],
-]);
 
 module.exports = withCSS({
   webpack: (config, { isServer }) => {
+    // Absolute import
+    config.resolve.alias['components'] = path.join(__dirname, 'src/components');
+    config.resolve.alias['config'] = path.join(__dirname, 'src/config');
+    config.resolve.alias['layouts'] = path.join(__dirname, 'src/layouts');
+    config.resolve.alias['lib'] = path.join(__dirname, 'src/lib');
+    config.resolve.alias['modules'] = path.join(__dirname, 'src/modules');
+    config.resolve.alias['styles'] = path.join(__dirname, 'src/styles');
+
     if (isServer) {
       const antStyles = /antd-mobile\/.*?\/style.*?/;
       const origExternals = [...config.externals];

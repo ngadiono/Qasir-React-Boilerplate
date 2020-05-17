@@ -130,17 +130,17 @@ On Going Development
 
 ## What's included
 
-|      :metal:      | Includes               |
-| :---------------: | :--------------------- |
-|      :gear:       | Express Server         |
-|        📦         | Webpack 4              |
-|         ⚛         | React 16               |
-|     :factory:     | Redux 3                |
-|      :robot:      | Dynamic Routing        |
-| :sparkling_heart: | Airbnb Styling         |
-|      :fire:       | Hot Module Replacement |
-|    :scissors:     | Code Splitting         |
-|    :hamburger:    | Server Side Rendering  |
+- [File-System Routing](https://nextjs.org/docs/routing/introduction)
+- [Automatic Code Splitting](https://reactjs.org/docs/code-splitting.html)
+- [Data Fetching](https://nextjs.org/docs/basic-features/data-fetching)
+- [Dynamic Routing](https://nextjs.org/docs/routing/dynamic-routes)
+- [Typescript Support](https://nextjs.org/docs/basic-features/typescript)
+- [Built-In CSS Support](https://nextjs.org/docs/basic-features/built-in-css-support)
+- [Dynamic Import](https://nextjs.org/docs/advanced-features/dynamic-import)
+- [Absolute Import](https://nextjs.org/docs/advanced-features/module-path-aliases)
+- [Multi Zones](https://nextjs.org/docs/advanced-features/multi-zones)
+- [Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
+- [PWA Support](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)
 
 ## Bugs and feature requests
 
