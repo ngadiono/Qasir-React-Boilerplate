@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const AntdNavbar = css`
+const AntdMobileNavbar = css`
   .am-navbar {
     height: 56px;
     box-shadow: 0px 4px 8px #e9ebef;
@@ -10,4 +10,4 @@ const AntdNavbar = css`
   }
 `;
 
-export default AntdNavbar;
+export default AntdMobileNavbar;

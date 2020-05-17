@@ -16,4 +16,5 @@ export const TitleNavbar = styled.div`
   font-size: 16px;
   line-height: 20px;
   color: #474955;
+  text-transform: capitalize;
 `;

@@ -2,12 +2,12 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 // Styles
-import AntdNavbar from './antd/navbar';
+import AntdMobileNavbar from './antd-mobile/navbar';
 
 const StyleOverride = createGlobalStyle`  
   ${css`
     #qasir-app {
-      ${AntdNavbar}
+      ${AntdMobileNavbar}
     }
   `}
 `;

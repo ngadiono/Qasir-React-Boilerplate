@@ -141,6 +141,7 @@ On Going Development
 - [Multi Zones](https://nextjs.org/docs/advanced-features/multi-zones)
 - [Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
 - [PWA Support](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction)
+- [HRM](https://nextjs.org/blog/next-9-4#fast-refresh)
 
 ## Bugs and feature requests
 
