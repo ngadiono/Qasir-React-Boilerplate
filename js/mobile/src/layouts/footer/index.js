@@ -1,1 +1,1 @@
-export default () => <div>Footer</div>;
+export default () => <footer>Footer</footer>;
