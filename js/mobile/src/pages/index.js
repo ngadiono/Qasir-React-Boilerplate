@@ -23,7 +23,7 @@ export default function Home({ appName }) {
       <div className="container">
         <main>
           <h1 className="title">
-            <Title>Qasir</Title> Dashboard
+            <Title>Qasir</Title> Mobile
           </h1>
 
           <p className="description">
@@ -32,7 +32,7 @@ export default function Home({ appName }) {
 
           <div className="grid">
             <a
-              href="https://github.com/qasir-id/Qasir-React-Boilerplate/blob/nextjs/js/dashboard/README.md"
+              href="https://github.com/qasir-id/Qasir-React-Boilerplate/blob/nextjs/js/mobile/README.md"
               className="card"
               target="_blank"
             >
@@ -43,7 +43,7 @@ export default function Home({ appName }) {
             <Link href="/auth/login">
               <a className="card">
                 <h3>Examples &rarr;</h3>
-                <p>Discover layout dashboard with components.</p>
+                <p>Discover layout mobile with components.</p>
               </a>
             </Link>
           </div>
@@ -116,6 +116,8 @@ export default function Home({ appName }) {
             user-select: none;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 500;
           }
 
           .title,

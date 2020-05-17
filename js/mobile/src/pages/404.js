@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // Vendors
-import { Button } from 'antd';
+import { Button } from 'antd-mobile';
 
 // Components
 import Error from 'components/errors';
