@@ -1,6 +1,8 @@
 const path = require('path');
-const compose = (plugins) => ({
-  webpack(config, options) {
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS({
+  webpack: (config, { isServer }) => {
     // Absolute import
     config.resolve.alias['components'] = path.join(__dirname, 'src/components');
     config.resolve.alias['config'] = path.join(__dirname, 'src/config');
@@ -9,46 +11,26 @@ const compose = (plugins) => ({
     config.resolve.alias['modules'] = path.join(__dirname, 'src/modules');
     config.resolve.alias['styles'] = path.join(__dirname, 'src/styles');
 
-    return plugins.reduce((config, plugin) => {
-      if (plugin instanceof Array) {
-        const [_plugin, ...args] = plugin;
-        plugin = _plugin(...args);
-      }
-      if (plugin instanceof Function) {
-        plugin = plugin();
-      }
-      if (plugin && plugin.webpack instanceof Function) {
-        return plugin.webpack(config, options);
-      }
-      return config;
-    }, config);
-  },
+    if (isServer) {
+      const antStyles = /antd-mobile\/.*?\/style.*?/;
+      const origExternals = [...config.externals];
+      config.externals = [
+        (context, request, callback) => {
+          if (request.match(antStyles)) return callback();
+          if (typeof origExternals[0] === 'function') {
+            origExternals[0](context, request, callback);
+          } else {
+            callback();
+          }
+        },
+        ...(typeof origExternals[0] === 'function' ? [] : origExternals),
+      ];
 
-  webpackDevMiddleware(config) {
-    return plugins.reduce((config, plugin) => {
-      if (plugin instanceof Array) {
-        const [_plugin, ...args] = plugin;
-        plugin = _plugin(...args);
-      }
-      if (plugin instanceof Function) {
-        plugin = plugin();
-      }
-      if (plugin && plugin.webpackDevMiddleware instanceof Function) {
-        return plugin.webpackDevMiddleware(config);
-      }
-      return config;
-    }, config);
+      config.module.rules.unshift({
+        test: antStyles,
+        use: 'null-loader',
+      });
+    }
+    return config;
   },
 });
-
-// Bundle analyzer
-const withBundleAnalyzer = require('@next/bundle-analyzer');
-
-module.exports = compose([
-  [
-    withBundleAnalyzer,
-    {
-      enabled: process.env.ANALYZE === 'true',
-    },
-  ],
-]);

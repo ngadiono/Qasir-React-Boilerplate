@@ -15,9 +15,9 @@ import withReduxStore from 'config/redux/withReduxStore';
 
 // Styles
 import 'antd/dist/antd.css';
-import StyleReset from '../styles/reset';
-import StyleGlobal from '../styles/global';
-import StyleOverride from '../styles/override';
+import StyleReset from 'styles/reset';
+import StyleGlobal from 'styles/global';
+import StyleOverride from 'styles/override';
 
 const appName = 'Qasir Boilerplate';
 const theme = {
