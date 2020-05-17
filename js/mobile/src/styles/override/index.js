@@ -2,12 +2,12 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 // Styles
-import AntdInput from './antd/input';
+import AntdNavbar from './antd/navbar';
 
 const StyleOverride = createGlobalStyle`  
   ${css`
     #qasir-app {
-      ${AntdInput}
+      ${AntdNavbar}
     }
   `}
 `;
